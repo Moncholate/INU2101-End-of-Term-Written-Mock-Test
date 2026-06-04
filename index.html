@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INU2101 — Inglés Básico II | End-of-Term Mock Test</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #4f46e5;
+  --primary-light: #818cf8;
+  --secondary: #7c3aed;
+  --accent: #06b6d4;
+  --danger: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+  min-height: 100vh;
+  padding: 30px 15px;
+  color: var(--text);
+}
+.container {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(79,70,229,0.25);
+  max-width: 920px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.header {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+.header .logo {
+  font-size: 0.75em;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+.header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.header p { opacity: 0.85; font-size: 1em; font-weight: 300; }
+.score-pills {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.score-pill {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+.content { padding: 40px; }
+.info-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+  line-height: 1.7;
+  color: #1e40af;
+}
+.info-box ul { padding-left: 18px; margin-top: 6px; }
+.info-box li { margin-bottom: 3px; }
+.toggle-es {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.82em;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  padding: 3px 12px;
+  background: white;
+}
+.toggle-es:hover { background: #eff6ff; }
+.es-block {
+  display: none;
+  background: #fefce8;
+  border: 1px solid #fde047;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 10px;
+  font-size: 0.87em;
+  color: #713f12;
+  line-height: 1.7;
+}
+.es-block ul { padding-left: 16px; margin-top: 4px; }
+.es-block li { margin-bottom: 2px; }
+#savedBanner {
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  font-size: 0.88em;
+  color: #065f46;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+#savedBanner button {
+  margin-left: auto;
+  background: none;
+  border: 1px solid #10b981;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+.name-block {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 35px;
+}
+.name-block label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 0.95em;
+}
+.name-block input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1em;
+  transition: border-color 0.2s;
+}
+.name-block input:focus { outline: none; border-color: var(--primary); }
+.section {
+  margin-bottom: 40px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.section-header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-header.listening {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  border-bottom: 1px solid #c4b5fd;
+}
+.section-header.reading {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border-bottom: 1px solid #93c5fd;
+}
+.section-header.writing {
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+  border-bottom: 1px solid #fca5a5;
+}
+.section-header .icon { font-size: 1.5em; }
+.section-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4em;
+  color: var(--text);
+}
+.section-header .pts {
+  margin-left: auto;
+  background: white;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+.section-body { padding: 28px; }
+.part-header {
+  font-weight: 700;
+  font-size: 1em;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed #e9d5ff;
+}
+.part-instructions {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.9em;
+  color: var(--muted);
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.part-divider {
+  border: none;
+  border-top: 2px dashed var(--border);
+  margin: 28px 0;
+}
+.audio-container {
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  border: 1px solid #c4b5fd;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+.audio-label {
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+audio {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.play-counter {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--muted);
+  background: white;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  transition: color 0.2s, border-color 0.2s;
+}
+.play-counter.warning { color: var(--warning); border-color: var(--warning); }
+.play-counter.limit   { color: var(--danger);  border-color: var(--danger); }
+
+/* MC GRID */
+.mc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 10px;
+}
+@media (max-width: 640px) { .mc-grid { grid-template-columns: 1fr; } }
+.mc-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  background: #fafafa;
+}
+.mc-question {
+  font-weight: 600;
+  font-size: 0.93em;
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.4;
+}
+.mc-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-size: 0.88em;
+  transition: all 0.15s;
+  background: white;
+}
+.mc-option:hover { border-color: var(--primary-light); background: #f5f3ff; }
+.mc-option input[type="radio"] { accent-color: var(--primary); flex-shrink: 0; }
+.mc-option label { cursor: pointer; line-height: 1.3; }
+
+/* T/F SECTION */
+.tf-block {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: white;
+}
+.tf-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fafafa;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.tf-num {
+  font-weight: 700;
+  color: var(--secondary);
+  min-width: 22px;
+  font-size: 0.93em;
+}
+.tf-statement {
+  flex: 1;
+  font-size: 0.93em;
+  color: var(--text);
+  line-height: 1.4;
+}
+.tf-btns { display: flex; gap: 8px; }
+.tf-btn {
+  padding: 5px 14px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85em;
+  font-weight: 700;
+  cursor: pointer;
+  background: white;
+  transition: all 0.15s;
+}
+.tf-btn.T-btn:hover, .tf-btn.T-btn.active { border-color: var(--success); background: #dcfce7; color: #15803d; }
+.tf-btn.F-btn:hover, .tf-btn.F-btn.active { border-color: var(--danger); background: #fee2e2; color: #b91c1c; }
+.tf-correction {
+  padding: 10px 16px;
+  display: none;
+}
+.tf-correction label {
+  display: block;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.tf-correction input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid var(--border);
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9em;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.tf-correction input:focus { outline: none; border-color: var(--primary); }
+
+/* MATCHING */
+.match-answers-box {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  line-height: 1.8;
+}
+.match-answers-box p { font-weight: 700; color: var(--secondary); margin-bottom: 8px; font-size: 0.88em; text-transform: uppercase; letter-spacing: 0.5px; }
+.match-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.93em;
+}
+.match-row:last-child { border-bottom: none; }
+.match-n { font-weight: 700; color: var(--secondary); min-width: 22px; }
+.match-q { flex: 1; color: var(--text); }
+.match-sel {
+  padding: 6px 10px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93em;
+  font-weight: 600;
+  color: var(--text);
+  background: white;
+  cursor: pointer;
+  min-width: 64px;
+  transition: border-color 0.2s;
+}
+.match-sel:focus { outline: none; border-color: var(--primary); }
+
+/* READING TEXT */
+.reading-text-box {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 22px;
+  line-height: 1.9;
+  font-size: 0.95em;
+}
+.reading-text-box h4 {
+  text-align: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15em;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.reading-intro {
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* OPEN QUESTIONS */
+.q-block { margin-bottom: 20px; }
+.q-label {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 0.93em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+  line-height: 1.4;
+}
+.q-num { color: var(--secondary); min-width: 22px; font-weight: 700; }
+.q-pts {
+  margin-left: auto;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.q-block textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93em;
+  color: var(--text);
+  resize: vertical;
+  min-height: 68px;
+  transition: border-color 0.2s;
+}
+.q-block textarea:focus { outline: none; border-color: var(--primary); }
+
+/* WRITING */
+.writing-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95em;
+  line-height: 1.7;
+  resize: vertical;
+  transition: border-color 0.2s;
+  margin-top: 12px;
+}
+.writing-textarea:focus { outline: none; border-color: var(--primary); }
+.word-counter {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: right;
+}
+.word-counter.good { color: var(--success); }
+.word-counter.warn { color: var(--warning); }
+.word-counter.bad  { color: var(--danger); }
+
+/* GEMINI BUTTON */
+.gemini-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.gemini-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* RUBRIC */
+.rubric-box {
+  margin-top: 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.rubric-title {
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 0.95em;
+  color: #be123c;
+  border-bottom: 1px solid #fca5a5;
+}
+.rubric-note {
+  padding: 10px 20px;
+  font-size: 0.82em;
+  color: var(--muted);
+  background: #fafafa;
+  border-bottom: 1px solid var(--border);
+}
+.criterion { padding: 18px 20px; border-bottom: 1px solid var(--border); }
+.criterion:last-child { border-bottom: none; }
+.criterion h4 { font-size: 0.93em; font-weight: 700; margin-bottom: 12px; color: var(--text); }
+.criterion-options { display: flex; flex-direction: column; gap: 6px; }
+.criterion-options label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88em;
+  line-height: 1.4;
+  transition: all 0.15s;
+}
+.criterion-options label:hover { border-color: #fca5a5; background: #fff1f2; }
+.criterion-options input[type="radio"] { accent-color: #ef4444; flex-shrink: 0; margin-top: 2px; }
+.rubric-subtotal {
+  background: #fdf2f8;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--secondary);
+  text-align: right;
+}
+
+/* UNANSWERED BANNER */
+.unanswered-banner {
+  display: none;
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-size: 0.88em;
+  color: #92400e;
+}
+.unanswered-banner ul { padding-left: 18px; margin: 8px 0 10px; }
+.unanswered-banner li { margin-bottom: 3px; }
+.unanswered-banner li a { color: var(--primary); font-weight: 600; }
+.unanswered-banner .continue-btn {
+  background: var(--warning);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+/* CALCULATE BUTTON */
+.calculate-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 18px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3em;
+  cursor: pointer;
+  margin: 30px 0 0;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.calculate-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16,185,129,0.35); }
+
+/* RESULTS */
+#results { display: none; margin-top: 30px; }
+.results-card {
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 1px solid #6ee7b7;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 24px;
+}
+.results-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5em;
+  color: #065f46;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #a7f3d0;
+  font-size: 0.95em;
+}
+.score-row:last-child { border-bottom: none; font-weight: 700; font-size: 1.05em; }
+.grade-display {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #10b981;
+}
+.grade-display .grade-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.5em;
+  line-height: 1;
+}
+.grade-display .grade-label { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+.grade-display .grade-msg { font-size: 0.9em; margin-top: 8px; font-weight: 600; color: var(--text); }
+
+/* PARTIAL BAR */
+.partial-feedback-bar {
+  display: none;
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-size: 0.88em;
+  color: #92400e;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.partial-feedback-bar button {
+  background: var(--warning);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* GEMINI CORRECTION BLOCK */
+.gemini-block {
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  border: 1px solid #c4b5fd;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.gemini-block h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1em;
+  color: var(--secondary);
+  margin-bottom: 6px;
+}
+.gemini-block p { font-size: 0.88em; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+.gemini-sub {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  font-size: 0.88em;
+}
+.gemini-sub h5 { font-weight: 700; color: var(--text); margin-bottom: 10px; font-size: 0.93em; }
+.gr-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  font-size: 0.88em;
+}
+.gr-row label { color: var(--muted); flex: 1; min-width: 180px; }
+.gr-row input[type="number"] {
+  width: 80px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93em;
+  text-align: center;
+  font-weight: 600;
+}
+.blank-badge {
+  display: inline-block;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.78em;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-left: 8px;
+}
+.gr-row input[type="number"].locked {
+  background: #f1f5f9;
+  color: var(--muted);
+  border-color: var(--border);
+  cursor: not-allowed;
+}
+.update-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92em;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+  margin-top: 10px;
+}
+.update-btn:hover { opacity: 0.9; }
+
+/* FEEDBACK */
+#feedbackSection { display: none; margin-top: 20px; }
+.filter-tabs { display: none; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.filter-tab {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--muted);
+}
+.filter-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+.feedback-part {
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.feedback-part-header {
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feedback-part-header.listening { background: #ede9fe; color: var(--secondary); }
+.feedback-part-header.reading   { background: #dbeafe; color: #1d4ed8; }
+.feedback-part-header.writing   { background: #fff1f2; color: #be123c; }
+.feedback-item {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.feedback-item:last-child { border-bottom: none; }
+.feedback-item .fi-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.feedback-item .student-ans { color: var(--muted); }
+.feedback-item .correct-ans { color: var(--success); font-weight: 600; }
+.feedback-item .explanation { margin-top: 5px; color: #64748b; font-style: italic; }
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.tag.correct-tag   { background: #dcfce7; color: #15803d; }
+.tag.incorrect-tag { background: #fee2e2; color: #b91c1c; }
+.tag.info-tag      { background: #dbeafe; color: #1d4ed8; }
+.section-msg {
+  padding: 12px 18px;
+  font-size: 0.88em;
+  font-weight: 600;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.section-msg.high   { color: #15803d; background: #f0fdf4; }
+.section-msg.mid    { color: #92400e; background: #fffbeb; }
+.section-msg.low    { color: #b91c1c; background: #fff1f2; }
+
+/* ── GEMINI MODAL ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 36px 32px;
+  max-width: 440px;
+  width: 92%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(79,70,229,0.25);
+}
+.modal-icon { font-size: 48px; margin-bottom: 14px; }
+.modal h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.modal p { font-size: 0.9em; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+.modal-key {
+  display: inline-block;
+  background: #f1f5f9;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 7px 20px;
+  font-weight: 800;
+  font-size: 1.1em;
+  color: var(--primary);
+  margin-bottom: 22px;
+  letter-spacing: 1px;
+}
+.modal-btns { display: flex; gap: 12px; }
+.modal-btn {
+  flex: 1; padding: 12px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93em;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+}
+.modal-btn:hover { opacity: 0.88; }
+.modal-btn.cancel { background: #f1f5f9; color: var(--muted); }
+.modal-btn.go { background: linear-gradient(135deg, #4285F4, #34A853); color: white; }
+
+/* TOAST & PRINT */
+#saveToast {
+  display: none;
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: var(--success);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.85em;
+  font-weight: 600;
+  z-index: 999;
+  box-shadow: 0 4px 14px rgba(16,185,129,0.3);
+}
+.print-btn {
+  display: block;
+  width: 100%;
+  background: #f8fafc;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.2s;
+}
+.print-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+@media (max-width: 768px) {
+  .content { padding: 20px; }
+  .header { padding: 28px 20px; }
+  .header h1 { font-size: 1.6em; }
+  .section-body { padding: 18px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">DuocUC · INU2101</div>
+    <h1>Inglés Básico II</h1>
+    <p>End-of-Term Mock Test &nbsp;·&nbsp; Files 10, 11 &amp; 12</p>
+    <div class="score-pills">
+      <span class="score-pill">🎧 Listening — 12 pts</span>
+      <span class="score-pill">📖 Reading — 12 pts</span>
+      <span class="score-pill">✍️ Writing — 12 pts</span>
+      <span class="score-pill">⏱ 60 minutos</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- SAVED BANNER -->
+    <div id="savedBanner">
+      💾 Se encontraron respuestas guardadas de una sesión anterior.
+      <button onclick="clearSaved()">Borrar y empezar de nuevo</button>
+    </div>
+
+    <!-- INFO BOX -->
+    <div class="info-box" id="info-box-en">
+      <strong>📋 Directions</strong>
+      <ul>
+        <li>You have <strong>60 minutes</strong> to complete this mock test.</li>
+        <li>Audio files will be played <strong>twice</strong>.</li>
+        <li>Read all questions carefully <strong>before</strong> listening or reading.</li>
+        <li>Complete this test <strong>individually</strong>.</li>
+        <li>Your answers are saved automatically.</li>
+      </ul>
+      <span class="toggle-es" onclick="toggleEs('es-directions')">🌐 Ver instrucciones en español</span>
+      <div class="es-block" id="es-directions">
+        <strong>📋 Instrucciones</strong>
+        <ul>
+          <li>Tienes <strong>60 minutos</strong> para completar este ensayo.</li>
+          <li>Los audios se reproducen <strong>dos veces</strong>.</li>
+          <li>Lee todas las preguntas con atención <strong>antes</strong> de escuchar o leer.</li>
+          <li>Completa el ensayo de forma <strong>individual</strong>.</li>
+          <li>Tus respuestas se guardan automáticamente.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STUDENT NAME -->
+    <div class="name-block">
+      <label for="studentName">👤 Full name / Nombre completo</label>
+      <input type="text" id="studentName" placeholder="Write your full name here..." oninput="saveAll()">
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- SECTION I — LISTENING                      -->
+    <!-- ══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header listening">
+        <span class="icon">🎧</span>
+        <h2>Section I — Listening</h2>
+        <span class="pts">12 pts</span>
+      </div>
+      <div class="section-body">
+
+        <!-- PART A -->
+        <div class="part-header">Part A</div>
+        <div class="part-instructions">
+          Listen to a conversation between David and Sofía about their last vacation. Select the correct answer for each question. (4 points)
+          <br><span class="toggle-es" onclick="toggleEs('es-la')">🌐 Ver en español</span>
+          <div class="es-block" id="es-la">Escucha una conversación entre David y Sofía sobre sus últimas vacaciones. Selecciona la respuesta correcta para cada pregunta. (4 puntos)</div>
+        </div>
+
+        <div class="audio-container">
+          <div class="audio-label">🔊 Listening — Part A</div>
+          <audio id="audioA" controls preload="metadata" playsinline onplay="trackPlay('audioA')">
+            <source src="https://github.com/Moncholate/INU2101-End-of-Term-Written-Mock-Test/raw/refs/heads/main/Listening%20A.mp3" type="audio/mpeg">
+          </audio>
+          <div class="play-counter" id="counter_audioA">Plays: 0 / 2</div>
+        </div>
+
+        <div class="mc-grid" id="mc-grid-la">
+          <!-- Q1 -->
+          <div class="mc-card">
+            <div class="mc-question">1. How did Sofía feel about her vacation?</div>
+            <div class="mc-option"><input type="radio" name="la1" id="la1a" value="a" onchange="saveAll()"><label for="la1a">a) It was okay.</label></div>
+            <div class="mc-option"><input type="radio" name="la1" id="la1b" value="b" onchange="saveAll()"><label for="la1b">b) It was boring.</label></div>
+            <div class="mc-option"><input type="radio" name="la1" id="la1c" value="c" onchange="saveAll()"><label for="la1c">c) It was fantastic.</label></div>
+            <div class="mc-option"><input type="radio" name="la1" id="la1d" value="d" onchange="saveAll()"><label for="la1d">d) It was tiring.</label></div>
+          </div>
+          <!-- Q2 -->
+          <div class="mc-card">
+            <div class="mc-question">2. Where did Sofía stay?</div>
+            <div class="mc-option"><input type="radio" name="la2" id="la2a" value="a" onchange="saveAll()"><label for="la2a">a) In a hotel.</label></div>
+            <div class="mc-option"><input type="radio" name="la2" id="la2b" value="b" onchange="saveAll()"><label for="la2b">b) In a hostel.</label></div>
+            <div class="mc-option"><input type="radio" name="la2" id="la2c" value="c" onchange="saveAll()"><label for="la2c">c) At her brother's house.</label></div>
+            <div class="mc-option"><input type="radio" name="la2" id="la2d" value="d" onchange="saveAll()"><label for="la2d">d) In a tent.</label></div>
+          </div>
+          <!-- Q3 -->
+          <div class="mc-card">
+            <div class="mc-question">3. What did David forget?</div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3a" value="a" onchange="saveAll()"><label for="la3a">a) His camera.</label></div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3b" value="b" onchange="saveAll()"><label for="la3b">b) His passport.</label></div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3c" value="c" onchange="saveAll()"><label for="la3c">c) His phone.</label></div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3d" value="d" onchange="saveAll()"><label for="la3d">d) His umbrella.</label></div>
+          </div>
+          <!-- Q4 -->
+          <div class="mc-card">
+            <div class="mc-question">4. What was the problem with David's vacation?</div>
+            <div class="mc-option"><input type="radio" name="la4" id="la4a" value="a" onchange="saveAll()"><label for="la4a">a) He didn't see his family.</label></div>
+            <div class="mc-option"><input type="radio" name="la4" id="la4b" value="b" onchange="saveAll()"><label for="la4b">b) The hotel was expensive.</label></div>
+            <div class="mc-option"><input type="radio" name="la4" id="la4c" value="c" onchange="saveAll()"><label for="la4c">c) He lost his phone.</label></div>
+            <div class="mc-option"><input type="radio" name="la4" id="la4d" value="d" onchange="saveAll()"><label for="la4d">d) It rained a lot.</label></div>
+          </div>
+        </div>
+
+        <hr class="part-divider">
+
+        <!-- PART B -->
+        <div class="part-header">Part B</div>
+        <div class="part-instructions">
+          Listen to five conversations. Select <strong>T</strong> for true statements or <strong>F</strong> for false statements. If the statement is false, type the correct information in the box below. (8 points)
+          <br><span class="toggle-es" onclick="toggleEs('es-lb')">🌐 Ver en español</span>
+          <div class="es-block" id="es-lb">Escucha cinco conversaciones. Selecciona <strong>V</strong> si el enunciado es verdadero o <strong>F</strong> si es falso. Si es falso, escribe la información correcta en la casilla. (8 puntos)</div>
+        </div>
+
+        <div class="audio-container">
+          <div class="audio-label">🔊 Listening — Part B</div>
+          <audio id="audioB" controls preload="metadata" playsinline onplay="trackPlay('audioB')">
+            <source src="https://github.com/Moncholate/INU2101-End-of-Term-Written-Mock-Test/raw/refs/heads/main/Listening%20B.mp3" type="audio/mpeg">
+          </audio>
+          <div class="play-counter" id="counter_audioB">Plays: 0 / 2</div>
+        </div>
+
+        <!-- Conv 1 -->
+        <div class="tf-block" id="tf-block-1">
+          <div class="tf-row">
+            <span class="tf-num">1.</span>
+            <span class="tf-statement">Pedro went to the party on Saturday.</span>
+            <div class="tf-btns">
+              <button class="tf-btn T-btn" onclick="setTF(1,'T')">T</button>
+              <button class="tf-btn F-btn" onclick="setTF(1,'F')">F</button>
+            </div>
+          </div>
+          <div class="tf-correction" id="tf-corr-1">
+            <label>✏️ Write the correct information:</label>
+            <input type="text" id="lb_j1" placeholder="Type the correct information..." oninput="saveAll()">
+          </div>
+        </div>
+
+        <!-- Conv 2 -->
+        <div class="tf-block" id="tf-block-2">
+          <div class="tf-row">
+            <span class="tf-num">2.</span>
+            <span class="tf-statement">Camila watched the game at home.</span>
+            <div class="tf-btns">
+              <button class="tf-btn T-btn" onclick="setTF(2,'T')">T</button>
+              <button class="tf-btn F-btn" onclick="setTF(2,'F')">F</button>
+            </div>
+          </div>
+          <div class="tf-correction" id="tf-corr-2">
+            <label>✏️ Write the correct information:</label>
+            <input type="text" id="lb_j2" placeholder="Type the correct information..." oninput="saveAll()">
+          </div>
+        </div>
+
+        <!-- Conv 3 -->
+        <div class="tf-block" id="tf-block-3">
+          <div class="tf-row">
+            <span class="tf-num">3.</span>
+            <span class="tf-statement">Valentina painted her room alone.</span>
+            <div class="tf-btns">
+              <button class="tf-btn T-btn" onclick="setTF(3,'T')">T</button>
+              <button class="tf-btn F-btn" onclick="setTF(3,'F')">F</button>
+            </div>
+          </div>
+          <div class="tf-correction" id="tf-corr-3">
+            <label>✏️ Write the correct information:</label>
+            <input type="text" id="lb_j3" placeholder="Type the correct information..." oninput="saveAll()">
+          </div>
+        </div>
+
+        <!-- Conv 4 -->
+        <div class="tf-block" id="tf-block-4">
+          <div class="tf-row">
+            <span class="tf-num">4.</span>
+            <span class="tf-statement">It rained during their walk.</span>
+            <div class="tf-btns">
+              <button class="tf-btn T-btn" onclick="setTF(4,'T')">T</button>
+              <button class="tf-btn F-btn" onclick="setTF(4,'F')">F</button>
+            </div>
+          </div>
+          <div class="tf-correction" id="tf-corr-4">
+            <label>✏️ Write the correct information:</label>
+            <input type="text" id="lb_j4" placeholder="Type the correct information..." oninput="saveAll()">
+          </div>
+        </div>
+
+        <!-- Conv 5 -->
+        <div class="tf-block" id="tf-block-5">
+          <div class="tf-row">
+            <span class="tf-num">5.</span>
+            <span class="tf-statement">Isabela played volleyball alone.</span>
+            <div class="tf-btns">
+              <button class="tf-btn T-btn" onclick="setTF(5,'T')">T</button>
+              <button class="tf-btn F-btn" onclick="setTF(5,'F')">F</button>
+            </div>
+          </div>
+          <div class="tf-correction" id="tf-corr-5">
+            <label>✏️ Write the correct information:</label>
+            <input type="text" id="lb_j5" placeholder="Type the correct information..." oninput="saveAll()">
+          </div>
+        </div>
+
+      </div><!-- /section-body listening -->
+    </div><!-- /section listening -->
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- SECTION II — READING                       -->
+    <!-- ══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header reading">
+        <span class="icon">📖</span>
+        <h2>Section II — Reading</h2>
+        <span class="pts">12 pts</span>
+      </div>
+      <div class="section-body">
+
+        <!-- PART A -->
+        <div class="part-header">Part A</div>
+        <div class="part-instructions">
+          Read the questions and answers about a vacation apartment. Match each question (1–6) with the correct answer (A–G). There is one extra answer. (6 points)
+          <br><span class="toggle-es" onclick="toggleEs('es-ra')">🌐 Ver en español</span>
+          <div class="es-block" id="es-ra">Lee las preguntas y respuestas sobre un apartamento de vacaciones. Une cada pregunta (1–6) con la respuesta correcta (A–G). Hay una respuesta extra. (6 puntos)</div>
+        </div>
+
+        <!-- Answer options box -->
+        <div class="match-answers-box">
+          <p>Answer options</p>
+          <div><strong>A.</strong> No, there isn't, but there is a public parking lot one block away.</div>
+          <div><strong>B.</strong> There is a bicycle station two blocks from the apartment.</div>
+          <div><strong>C.</strong> Yes, there is. There is a great view of the mountains from the balcony.</div>
+          <div><strong>D.</strong> Yes, there is. It's next to the kitchen.</div>
+          <div><strong>E.</strong> Yes! There is a very good restaurant across the street.</div>
+          <div><strong>F.</strong> Yes, there is. It's open every day and it's two blocks away.</div>
+          <div><strong>G.</strong> No, there isn't, but there are fans in every room.</div>
+        </div>
+
+        <div class="match-row" id="ra-row-1">
+          <span class="match-n">1.</span>
+          <span class="match-q">Is there a washing machine in the apartment?</span>
+          <select class="match-sel" id="ra1" onchange="saveAll()">
+            <option value="">–</option>
+            <option>A</option><option>B</option><option>C</option>
+            <option>D</option><option>E</option><option>F</option><option>G</option>
+          </select>
+        </div>
+        <div class="match-row" id="ra-row-2">
+          <span class="match-n">2.</span>
+          <span class="match-q">Is there a supermarket near the apartment?</span>
+          <select class="match-sel" id="ra2" onchange="saveAll()">
+            <option value="">–</option>
+            <option>A</option><option>B</option><option>C</option>
+            <option>D</option><option>E</option><option>F</option><option>G</option>
+          </select>
+        </div>
+        <div class="match-row" id="ra-row-3">
+          <span class="match-n">3.</span>
+          <span class="match-q">Is there a parking space?</span>
+          <select class="match-sel" id="ra3" onchange="saveAll()">
+            <option value="">–</option>
+            <option>A</option><option>B</option><option>C</option>
+            <option>D</option><option>E</option><option>F</option><option>G</option>
+          </select>
+        </div>
+        <div class="match-row" id="ra-row-4">
+          <span class="match-n">4.</span>
+          <span class="match-q">Is there air conditioning in the apartment?</span>
+          <select class="match-sel" id="ra4" onchange="saveAll()">
+            <option value="">–</option>
+            <option>A</option><option>B</option><option>C</option>
+            <option>D</option><option>E</option><option>F</option><option>G</option>
+          </select>
+        </div>
+        <div class="match-row" id="ra-row-5">
+          <span class="match-n">5.</span>
+          <span class="match-q">Is there a balcony?</span>
+          <select class="match-sel" id="ra5" onchange="saveAll()">
+            <option value="">–</option>
+            <option>A</option><option>B</option><option>C</option>
+            <option>D</option><option>E</option><option>F</option><option>G</option>
+          </select>
+        </div>
+        <div class="match-row" id="ra-row-6">
+          <span class="match-n">6.</span>
+          <span class="match-q">Are there any restaurants near the apartment?</span>
+          <select class="match-sel" id="ra6" onchange="saveAll()">
+            <option value="">–</option>
+            <option>A</option><option>B</option><option>C</option>
+            <option>D</option><option>E</option><option>F</option><option>G</option>
+          </select>
+        </div>
+
+        <hr class="part-divider">
+
+        <!-- PART B -->
+        <div class="part-header">Part B</div>
+        <div class="part-instructions">
+          Read the text about a person's trip last year and answer the questions. Include ALL relevant information to demonstrate your reading comprehension. (6 points)
+          <br><span class="toggle-es" onclick="toggleEs('es-rb')">🌐 Ver en español</span>
+          <div class="es-block" id="es-rb">Lee el texto sobre el viaje de una persona el año pasado y responde las preguntas. Incluye TODA la información relevante para demostrar tu comprensión lectora. (6 puntos)</div>
+        </div>
+
+        <div class="reading-intro">Before reading the text, review the questions carefully. This will help you quickly identify the key information you need.</div>
+
+        <div class="reading-text-box">
+          <h4>A trip to remember</h4>
+          <p>My name is Lucas and last summer I went on an amazing trip to Europe. I went with my friend Marco, but our families did not come with us. We traveled for two weeks. It was the first time we were away from home alone.</p>
+          <br>
+          <p>We went to three countries: Poland, the Czech Republic, and Hungary.</p>
+          <br>
+          <p>We started in Warsaw, the capital city of Poland. Marco loved the city, but I did not like it very much. The streets were very cold and it rained every day.</p>
+          <br>
+          <p>Then we traveled to Prague, in the Czech Republic. It was my favorite city on the trip. We walked a lot and saw beautiful old buildings. We also had fantastic food there. One day, we did not have a map and we walked for three hours in the wrong direction. We talked a lot about it after.</p>
+          <br>
+          <p>After Prague, we traveled to Budapest, in Hungary. We walked next to the Danube River and saw the famous Chain Bridge. At night, the city looked beautiful with all the lights. We stayed in a small hostel near the center. The people there were very friendly and helped us a lot.</p>
+          <br>
+          <p>After two weeks, we went back home. We were very tired, but very happy. It was a trip to remember.</p>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">
+            <span class="q-num">1.</span>
+            <span>How long was the trip?</span>
+            <span class="q-pts">1 pt</span>
+          </div>
+          <textarea id="rb_q1" placeholder="Write your answer here..." oninput="saveAll()"></textarea>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">
+            <span class="q-num">2.</span>
+            <span>Who did NOT enjoy the first city?</span>
+            <span class="q-pts">1 pt</span>
+          </div>
+          <textarea id="rb_q2" placeholder="Write your answer here..." oninput="saveAll()"></textarea>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">
+            <span class="q-num">3.</span>
+            <span>What did they do in Prague? Write 2 ideas.</span>
+            <span class="q-pts">2 pts</span>
+          </div>
+          <textarea id="rb_q3" placeholder="Write your answer here..." oninput="saveAll()"></textarea>
+        </div>
+
+        <div class="q-block">
+          <div class="q-label">
+            <span class="q-num">4.</span>
+            <span>What did the narrator like about Budapest? Write 2 ideas.</span>
+            <span class="q-pts">2 pts</span>
+          </div>
+          <textarea id="rb_q4" placeholder="Write your answer here..." oninput="saveAll()"></textarea>
+        </div>
+
+      </div><!-- /section-body reading -->
+    </div><!-- /section reading -->
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- SECTION III — WRITING                      -->
+    <!-- ══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header writing">
+        <span class="icon">✍️</span>
+        <h2>Section III — Writing</h2>
+        <span class="pts">12 pts</span>
+      </div>
+      <div class="section-body">
+
+        <div class="part-instructions">
+          Write a text about <strong>what you did last Friday</strong> in at least <strong>40 words</strong>.<br><br>
+          Include:<br>
+          1. What you did at different times of the day (morning, afternoon, and evening).<br>
+          2. The places you went to and the people you were with.<br>
+          3. What you did in each of those places.<br><br>
+          <em>Remember to check your grammar and spelling, and to use vocabulary studied in class. Include ONLY original ideas. Do not copy ideas from this test.</em>
+          <br><span class="toggle-es" onclick="toggleEs('es-wr')">🌐 Ver en español</span>
+          <div class="es-block" id="es-wr">
+            Escribe un texto sobre <strong>lo que hiciste el viernes pasado</strong> con al menos <strong>40 palabras</strong>.<br><br>
+            Incluye:<br>
+            1. Lo que hiciste en distintos momentos del día (mañana, tarde y noche).<br>
+            2. Los lugares adonde fuiste y las personas que estuvieron contigo.<br>
+            3. Lo que hiciste en cada uno de esos lugares.<br><br>
+            <em>Recuerda revisar tu gramática y ortografía, y usar el vocabulario estudiado en clases. Incluye SOLO ideas originales. No copies ideas de este ensayo.</em>
+          </div>
+        </div>
+
+        <textarea class="writing-textarea" id="writingText" placeholder="Write your text here..." oninput="updateWordCount(); saveAll()"></textarea>
+        <div class="word-counter" id="wordCounter">Words: 0 / 40 minimum</div>
+
+        <!-- Gemini button for writing -->
+        <button class="gemini-btn" onclick="copyWritingPrompt()">
+          ✨ Copy Gemini evaluation prompt
+        </button>
+
+
+        <!-- RUBRIC -->
+        <div class="rubric-box">
+          <div class="rubric-title">📊 Writing Rubric — Self-evaluation (completed by teacher after Gemini review)</div>
+          <div class="rubric-note">Select one option per criterion after reviewing the Gemini evaluation.</div>
+
+          <!-- Criterion 1 -->
+          <div class="criterion">
+            <h4>1. Coherencia y Extensión (max. 4 pts)</h4>
+            <div class="criterion-options">
+              <label><input type="radio" name="rub1" value="4" onchange="updateRubric();saveAll()"> <span><strong>4 pts (100%)</strong> — Escribe ≥40 palabras, presenta todas las ideas requeridas de forma coherente.</span></label>
+              <label><input type="radio" name="rub1" value="3.2" onchange="updateRubric();saveAll()"> <span><strong>3.2 pts (80%)</strong> — Entre 30–39 palabras, presenta todas las ideas requeridas y de forma coherente.</span></label>
+              <label><input type="radio" name="rub1" value="2.4" onchange="updateRubric();saveAll()"> <span><strong>2.4 pts (60%)</strong> — Entre 20–29 palabras, cobertura parcial de los temas o alguna idea incoherente.</span></label>
+              <label><input type="radio" name="rub1" value="1.2" onchange="updateRubric();saveAll()"> <span><strong>1.2 pts (30%)</strong> — Entre 10–19 palabras, baja cobertura o incoherencia general.</span></label>
+              <label><input type="radio" name="rub1" value="0" onchange="updateRubric();saveAll()"> <span><strong>0 pts</strong> — Menos de 10 palabras o nula cobertura de los temas. No responde.</span></label>
+            </div>
+          </div>
+
+          <!-- Criterion 2 -->
+          <div class="criterion">
+            <h4>2. Vocabulario (max. 3 pts)</h4>
+            <div class="criterion-options">
+              <label><input type="radio" name="rub2" value="3" onchange="updateRubric();saveAll()"> <span><strong>3 pts (100%)</strong> — Usa correctamente ≥6 palabras del vocabulario aprendido en contextos adecuados.</span></label>
+              <label><input type="radio" name="rub2" value="2.4" onchange="updateRubric();saveAll()"> <span><strong>2.4 pts (80%)</strong> — Usa correctamente al menos 5 palabras del vocabulario aprendido.</span></label>
+              <label><input type="radio" name="rub2" value="1.8" onchange="updateRubric();saveAll()"> <span><strong>1.8 pts (60%)</strong> — Usa correctamente al menos 4 palabras del vocabulario aprendido.</span></label>
+              <label><input type="radio" name="rub2" value="0.9" onchange="updateRubric();saveAll()"> <span><strong>0.9 pts (30%)</strong> — Usa correctamente al menos 3 palabras del vocabulario aprendido.</span></label>
+              <label><input type="radio" name="rub2" value="0" onchange="updateRubric();saveAll()"> <span><strong>0 pts</strong> — Usa 2 o menos palabras del vocabulario o las usa incorrectamente. No responde.</span></label>
+            </div>
+          </div>
+
+          <!-- Criterion 3 -->
+          <div class="criterion">
+            <h4>3. Gramática (max. 3 pts)</h4>
+            <div class="criterion-options">
+              <label><input type="radio" name="rub3" value="3" onchange="updateRubric();saveAll()"> <span><strong>3 pts (100%)</strong> — Oraciones gramaticalmente correctas; máximo 1 error sin impacto en la comprensión.</span></label>
+              <label><input type="radio" name="rub3" value="2.4" onchange="updateRubric();saveAll()"> <span><strong>2.4 pts (80%)</strong> — Mayoritariamente correctas; entre 2 y 3 errores sin impacto en la comprensión.</span></label>
+              <label><input type="radio" name="rub3" value="1.8" onchange="updateRubric();saveAll()"> <span><strong>1.8 pts (60%)</strong> — Errores en 4 o 5 casos; dificulta parcialmente la comprensión.</span></label>
+              <label><input type="radio" name="rub3" value="0.9" onchange="updateRubric();saveAll()"> <span><strong>0.9 pts (30%)</strong> — Errores en 6 o 7 casos; dificulta significativamente la comprensión.</span></label>
+              <label><input type="radio" name="rub3" value="0" onchange="updateRubric();saveAll()"> <span><strong>0 pts</strong> — 8 o más errores; impide la comprensión. No responde.</span></label>
+            </div>
+          </div>
+
+          <!-- Criterion 4 -->
+          <div class="criterion">
+            <h4>4. Ortografía (max. 2 pts)</h4>
+            <div class="criterion-options">
+              <label><input type="radio" name="rub4" value="2" onchange="updateRubric();saveAll()"> <span><strong>2 pts (100%)</strong> — Máximo 2 errores ortográficos que no interfieren con la comprensión.</span></label>
+              <label><input type="radio" name="rub4" value="1.6" onchange="updateRubric();saveAll()"> <span><strong>1.6 pts (80%)</strong> — Entre 3 y 4 errores; el mensaje sigue siendo comprensible.</span></label>
+              <label><input type="radio" name="rub4" value="1.2" onchange="updateRubric();saveAll()"> <span><strong>1.2 pts (60%)</strong> — Entre 5 y 6 errores; afectan parcialmente el mensaje.</span></label>
+              <label><input type="radio" name="rub4" value="0.6" onchange="updateRubric();saveAll()"> <span><strong>0.6 pts (30%)</strong> — Entre 7 y 8 errores; dificultan significativamente la comprensión.</span></label>
+              <label><input type="radio" name="rub4" value="0" onchange="updateRubric();saveAll()"> <span><strong>0 pts</strong> — Más de 9 errores; impiden la comprensión. No responde.</span></label>
+            </div>
+          </div>
+
+          <div class="rubric-subtotal">Writing subtotal: <span id="rubricTotal">0</span> / 12 pts</div>
+        </div>
+
+      </div><!-- /section-body writing -->
+    </div><!-- /section writing -->
+
+    <!-- UNANSWERED BANNER -->
+    <div class="unanswered-banner" id="unansweredBanner">
+      ⚠️ <strong>Some questions are unanswered:</strong>
+      <ul id="unansweredList"></ul>
+      <em style="font-size:0.85em;">You can still submit — unanswered questions will receive 0 points.</em><br>
+      <button class="continue-btn" onclick="proceedCalculate()">Continue anyway →</button>
+    </div>
+
+    <!-- CALCULATE BUTTON -->
+    <button class="calculate-btn" onclick="checkUnanswered()">✅ Calculate my score</button>
+
+    <!-- RESULTS -->
+    <div id="results">
+
+      <!-- SCORE SUMMARY -->
+      <div class="results-card">
+        <h3>📊 Score Summary — <span id="resultName"></span></h3>
+        <div class="score-row"><span>🎧 Listening A (auto)</span><span id="res-la">—</span></div>
+        <div class="score-row"><span>🎧 Listening B — T/F (auto)</span><span id="res-lb-tf">—</span></div>
+        <div class="score-row"><span>🎧 Listening B — Corrections (Gemini)</span><span id="res-lb-corr">—</span></div>
+        <div class="score-row"><span>📖 Reading A (auto)</span><span id="res-ra">—</span></div>
+        <div class="score-row"><span>📖 Reading B (Gemini)</span><span id="res-rb">—</span></div>
+        <div class="score-row"><span>✍️ Writing (Gemini + Rubric)</span><span id="res-wr">—</span></div>
+        <div class="score-row"><span><strong>Total</strong></span><span id="res-total"><strong>—</strong></span></div>
+
+        <!-- Grade display -->
+        <div id="gradeDisplay"></div>
+      </div>
+
+      <!-- PARTIAL FEEDBACK BAR -->
+      <div id="partialBar" style="display:none;background:#fffbeb;border:1px solid #f59e0b;border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:0.88em;color:#92400e;">
+        ⏳ <strong>Retroalimentación completa pendiente.</strong> Completa la revisión con Gemini para ver tu nota final y retroalimentación detallada.
+        <button onclick="togglePartialFeedback()" id="partialBtn" style="margin-left:12px;background:var(--warning);color:white;border:none;border-radius:7px;padding:7px 14px;font-family:'DM Sans',sans-serif;font-size:0.85em;font-weight:600;cursor:pointer;">👁 Ver retroalimentación parcial</button>
+      </div>
+
+      <!-- GEMINI CORRECTION BLOCK -->
+      <div class="gemini-block" id="geminiBlock">
+        <h4>✨ Revisión con Gemini</h4>
+        <p>Completa los tres pasos a continuación para obtener tu nota final. Cada botón copia el prompt correspondiente al portapapeles — pégalo en Gemini y luego ingresa los puntajes sugeridos.</p>
+
+        <!-- LB Corrections -->
+        <div class="gemini-sub">
+          <h5>🎧 Paso 1 — Listening B: correcciones de ítems falsos</h5>
+          <p style="font-size:0.85em;color:var(--muted);margin-bottom:10px;">Las preguntas que dejaste en blanco ya tienen 0 pts asignado automáticamente.</p>
+          <button class="gemini-btn" style="margin-top:0;" onclick="copyLBPrompt()">📋 Copiar prompt Listening B</button>
+
+          <div style="margin-top:14px;">
+            <div class="gr-row" id="gr-lb2"><label>Conv. 2 — Corrección Camila (0 o 1 pt):</label><input type="number" id="lb_gscore2" min="0" max="1" step="1" value="0" onchange="saveAll()"></div>
+            <div class="gr-row" id="gr-lb3"><label>Conv. 3 — Corrección Valentina (0 o 1 pt):</label><input type="number" id="lb_gscore3" min="0" max="1" step="1" value="0" onchange="saveAll()"></div>
+            <div class="gr-row" id="gr-lb4"><label>Conv. 4 — Corrección Rodrigo (0 o 1 pt):</label><input type="number" id="lb_gscore4" min="0" max="1" step="1" value="0" onchange="saveAll()"></div>
+            <div class="gr-row" id="gr-lb5"><label>Conv. 5 — Corrección Isabela (0 o 1 pt):</label><input type="number" id="lb_gscore5" min="0" max="1" step="1" value="0" onchange="saveAll()"></div>
+          </div>
+        </div>
+
+        <!-- RB Questions -->
+        <div class="gemini-sub">
+          <h5>📖 Paso 2 — Reading B: preguntas abiertas</h5>
+          <button class="gemini-btn" style="margin-top:0;" onclick="copyRBPrompt()">📋 Copiar prompt Reading B</button>
+
+          <div style="margin-top:14px;">
+            <div class="gr-row"><label>P1 — How long was the trip? (0–1 pt):</label>
+              <input type="number" id="rb_gscore1" min="0" max="1" step="0.5" value="0" onchange="document.getElementById('rb_q1_score').value=this.value;saveAll()">
+            </div>
+            <div class="gr-row"><label>P2 — Who did NOT enjoy the first city? (0–1 pt):</label>
+              <input type="number" id="rb_gscore2" min="0" max="1" step="0.5" value="0" onchange="document.getElementById('rb_q2_score').value=this.value;saveAll()">
+            </div>
+            <div class="gr-row"><label>P3 — What did they do in Prague? (0–2 pts):</label>
+              <input type="number" id="rb_gscore3" min="0" max="2" step="0.5" value="0" onchange="document.getElementById('rb_q3_score').value=this.value;saveAll()">
+            </div>
+            <div class="gr-row"><label>P4 — What did the narrator like about Budapest? (0–2 pts):</label>
+              <input type="number" id="rb_gscore4" min="0" max="2" step="0.5" value="0" onchange="document.getElementById('rb_q4_score').value=this.value;saveAll()">
+            </div>
+          </div>
+          <!-- Hidden sync inputs -->
+          <input type="hidden" id="rb_q1_score" value="0">
+          <input type="hidden" id="rb_q2_score" value="0">
+          <input type="hidden" id="rb_q3_score" value="0">
+          <input type="hidden" id="rb_q4_score" value="0">
+        </div>
+
+        <!-- Writing -->
+        <div class="gemini-sub">
+          <h5>✍️ Paso 3 — Writing</h5>
+          <p style="font-size:0.85em;color:var(--muted);margin-bottom:6px;">Usa el botón "Copy Gemini evaluation prompt" en la sección Writing y luego selecciona el nivel en la rúbrica.</p>
+          <p style="font-size:0.85em;color:var(--muted);">Puntaje Writing actual (rúbrica): <strong><span id="writingScoreDisplay">0</span> / 12</strong></p>
+        </div>
+
+        <button class="update-btn" onclick="updateWithGeminiScores()">✅ Actualizar nota con puntajes Gemini</button>
+      </div>
+
+      <!-- FEEDBACK SECTION -->
+      <div id="feedbackSection" style="display:none;">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" onclick="filterFeedback('all')">Todos</button>
+          <button class="filter-tab" onclick="filterFeedback('incorrect')">❌ Incorrectos</button>
+          <button class="filter-tab" onclick="filterFeedback('correct')">✅ Correctos</button>
+        </div>
+        <div id="partialNote" style="display:none;font-size:0.85em;color:var(--warning);font-weight:600;margin-bottom:10px;">👁 Mostrando solo secciones auto-corregidas (Listening A, Listening B T/F, Reading A).</div>
+        <div id="feedbackContent"></div>
+      </div>
+
+      <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div><!-- /results -->
+
+  </div><!-- /content -->
+</div><!-- /container -->
+<!-- GEMINI MODAL -->
+<div class="modal-overlay" id="geminiModal">
+  <div class="modal">
+    <span class="modal-icon">📋</span>
+    <h3 id="modalTitle">¡Prompt copiado!</h3>
+    <p>El prompt con tus respuestas ya está en el portapapeles.</p>
+    <ol style="text-align:left;padding-left:18px;margin-bottom:18px;font-size:0.88em;color:var(--text);line-height:1.8;">
+      <li>Abre Gemini en tu navegador</li>
+      <li>Pega el texto con <strong>Ctrl+V</strong> (Windows) o <strong>Cmd+V</strong> (Mac)</li>
+      <li id="modalStep3">Ingresa los puntajes del <strong>Bloque 2</strong> en el mock test</li>
+    </ol>
+    <div class="modal-btns">
+      <button class="modal-btn cancel" onclick="closeGeminiModal()">Cerrar</button>
+      <button class="modal-btn go" onclick="openGemini()">Abrir Gemini ↗</button>
+    </div>
+  </div>
+</div>
+
+<div id="saveToast">💾 Guardado</div>
+
+<script>
+// ── ANSWER KEYS ──
+const LA_KEY = { la1:'c', la2:'b', la3:'a', la4:'d' };
+const LB_TF  = { 1:'T', 2:'F', 3:'F', 4:'F', 5:'F' };
+const LB_CORR = {
+  2: 'She watched it at her sister\'s house.',
+  3: 'Her brother helped her.',
+  4: 'It didn\'t rain. It was sunny all day.',
+  5: 'She played with her friends.'
+};
+const RA_KEY = { ra1:'D', ra2:'F', ra3:'A', ra4:'G', ra5:'C', ra6:'E' };
+
+// ── STATE ──
+const SAVE_KEY = 'mocktest_inu2101_eot_v1';
+let saveTimer;
+let autoGeminiDone = false;
+let partialVisible = false;
+let tfAnswers = {};
+let proceedAnyway = false;
+
+// ── AUDIO COUNTER ──
+const playCounts = {};
+function trackPlay(audioId) {
+  if (!playCounts[audioId]) playCounts[audioId] = 0;
+  playCounts[audioId]++;
+  const counter = document.getElementById('counter_' + audioId);
+  const audio   = document.getElementById(audioId);
+  const count   = playCounts[audioId];
+  if (count >= 2) {
+    counter.textContent = '⚠️ Límite de 2 reproducciones alcanzado';
+    counter.className   = 'play-counter limit';
+    audio.addEventListener('ended', () => {
+      audio.controls = false;
+      audio.style.opacity = '0.4';
+      audio.style.pointerEvents = 'none';
+    }, { once: true });
+  } else if (count === 1) {
+    counter.textContent = 'Plays: 1 / 2 — 1 reproducción restante';
+    counter.className   = 'play-counter warning';
+  }
+}
+
+// ── T/F LOGIC ──
+function setTF(n, val) {
+  tfAnswers[n] = val;
+  document.querySelector(`#tf-block-${n} .T-btn`).classList.toggle('active', val === 'T');
+  document.querySelector(`#tf-block-${n} .F-btn`).classList.toggle('active', val === 'F');
+  const corrDiv = document.getElementById(`tf-corr-${n}`);
+  corrDiv.style.display = val === 'F' ? 'block' : 'none';
+  saveAll();
+}
+
+// ── WORD COUNT ──
+function updateWordCount() {
+  const text  = document.getElementById('writingText').value.trim();
+  const words = text ? text.split(/\s+/).length : 0;
+  const el    = document.getElementById('wordCounter');
+  el.textContent = `Words: ${words} / 40 minimum`;
+  el.className   = 'word-counter ' + (words >= 40 ? 'good' : words >= 25 ? 'warn' : 'bad');
+}
+
+// ── RUBRIC ──
+function updateRubric() {
+  const vals = ['rub1','rub2','rub3','rub4'].map(n => {
+    const r = document.querySelector(`input[name="${n}"]:checked`);
+    return r ? parseFloat(r.value) : 0;
+  });
+  const total = vals.reduce((a,b) => a+b, 0);
+  document.getElementById('rubricTotal').textContent = total.toFixed(1);
+  const disp = document.getElementById('writingScoreDisplay');
+  if (disp) disp.textContent = total.toFixed(1);
+  return total;
+}
+
+// ── SPANISH TOGGLE ──
+function toggleEs(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+
+// ── AUTOSAVE ──
+function g(id) { const el = document.getElementById(id); return el ? el.value : ''; }
+function getRadio(name) { const c = document.querySelector(`input[name="${name}"]:checked`); return c ? c.value : ''; }
+
+function saveAll() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    const data = {
+      studentName: g('studentName'),
+      la1: getRadio('la1'), la2: getRadio('la2'), la3: getRadio('la3'), la4: getRadio('la4'),
+      tfAnswers: JSON.stringify(tfAnswers),
+      lb_j1: g('lb_j1'), lb_j2: g('lb_j2'), lb_j3: g('lb_j3'), lb_j4: g('lb_j4'), lb_j5: g('lb_j5'),
+      ra1: g('ra1'), ra2: g('ra2'), ra3: g('ra3'), ra4: g('ra4'), ra5: g('ra5'), ra6: g('ra6'),
+      rb_q1: g('rb_q1'), rb_q2: g('rb_q2'), rb_q3: g('rb_q3'), rb_q4: g('rb_q4'),
+      writingText: g('writingText'),
+      rub1: getRadio('rub1'), rub2: getRadio('rub2'), rub3: getRadio('rub3'), rub4: getRadio('rub4'),
+      lb_gscore2: g('lb_gscore2'), lb_gscore3: g('lb_gscore3'), lb_gscore4: g('lb_gscore4'), lb_gscore5: g('lb_gscore5'),
+      rb_gscore1: g('rb_gscore1'), rb_gscore2: g('rb_gscore2'), rb_gscore3: g('rb_gscore3'), rb_gscore4: g('rb_gscore4'),
+    };
+    localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+    flashToast();
+  }, 900);
+}
+
+function loadSaved() {
+  const raw = localStorage.getItem(SAVE_KEY);
+  if (!raw) return;
+  const d = JSON.parse(raw);
+  const set = (id, val) => { const el = document.getElementById(id); if (el && val !== undefined) el.value = val; };
+  set('studentName', d.studentName);
+  ['la1','la2','la3','la4'].forEach(n => {
+    if (d[n]) { const r = document.querySelector(`input[name="${n}"][value="${d[n]}"]`); if(r) r.checked = true; }
+  });
+  if (d.tfAnswers) {
+    const tf = JSON.parse(d.tfAnswers);
+    Object.keys(tf).forEach(k => setTF(parseInt(k), tf[k]));
+  }
+  ['lb_j1','lb_j2','lb_j3','lb_j4','lb_j5'].forEach(id => set(id, d[id]));
+  ['ra1','ra2','ra3','ra4','ra5','ra6'].forEach(id => set(id, d[id]));
+  ['rb_q1','rb_q2','rb_q3','rb_q4'].forEach(id => set(id, d[id]));
+  set('writingText', d.writingText);
+  ['rub1','rub2','rub3','rub4'].forEach(n => {
+    if (d[n]) { const r = document.querySelector(`input[name="${n}"][value="${d[n]}"]`); if(r) r.checked = true; }
+  });
+  ['lb_gscore2','lb_gscore3','lb_gscore4','lb_gscore5',
+   'rb_gscore1','rb_gscore2','rb_gscore3','rb_gscore4'].forEach(id => set(id, d[id]));
+  updateWordCount();
+  updateRubric();
+  document.getElementById('savedBanner').style.display = 'flex';
+}
+
+function clearSaved() {
+  localStorage.removeItem(SAVE_KEY);
+  document.getElementById('savedBanner').style.display = 'none';
+}
+
+function flashToast() {
+  const t = document.getElementById('saveToast');
+  t.style.display = 'block';
+  setTimeout(() => { t.style.display = 'none'; }, 1800);
+}
+
+// ── UNANSWERED CHECK ──
+function checkUnanswered() {
+  if (proceedAnyway) { proceedAnyway = false; calculateFinalGrade(); return; }
+  const missing = [];
+  ['la1','la2','la3','la4'].forEach((n,i) => {
+    if (!getRadio(n)) missing.push(`<li><a href="#mc-grid-la" onclick="scrollTo('mc-grid-la')">Listening A — Question ${i+1}</a></li>`);
+  });
+  for (let i=1; i<=5; i++) {
+    if (!tfAnswers[i]) missing.push(`<li><a href="#tf-block-${i}" onclick="scrollToId('tf-block-${i}')">Listening B — Conversation ${i}</a></li>`);
+  }
+  ['ra1','ra2','ra3','ra4','ra5','ra6'].forEach((id,i) => {
+    if (!g(id)) missing.push(`<li><a href="#ra-row-${i+1}" onclick="scrollToId('ra-row-${i+1}')">Reading A — Question ${i+1}</a></li>`);
+  });
+  if (!g('rb_q1')) missing.push('<li><a href="#rb_q1" onclick="scrollToId(\'rb_q1\')">Reading B — Question 1</a></li>');
+  if (!g('rb_q2')) missing.push('<li><a href="#rb_q2" onclick="scrollToId(\'rb_q2\')">Reading B — Question 2</a></li>');
+  if (!g('rb_q3')) missing.push('<li><a href="#rb_q3" onclick="scrollToId(\'rb_q3\')">Reading B — Question 3</a></li>');
+  if (!g('rb_q4')) missing.push('<li><a href="#rb_q4" onclick="scrollToId(\'rb_q4\')">Reading B — Question 4</a></li>');
+  if (!g('writingText').trim()) missing.push('<li><a href="#writingText" onclick="scrollToId(\'writingText\')">Writing — No text written</a></li>');
+
+  if (missing.length > 0) {
+    document.getElementById('unansweredList').innerHTML = missing.join('');
+    document.getElementById('unansweredBanner').style.display = 'block';
+    document.getElementById('unansweredBanner').scrollIntoView({ behavior: 'smooth' });
+  } else {
+    calculateFinalGrade();
+  }
+}
+
+function proceedCalculate() {
+  document.getElementById('unansweredBanner').style.display = 'none';
+  proceedAnyway = true;
+  calculateFinalGrade();
+}
+
+// ── GRADE CALCULATOR ──
+function calcGrade(score, maxScore) {
+  const pct = (score / maxScore) * 100;
+  const grade = pct < 60
+    ? (1 + (pct / 60) * 3)
+    : (4 + ((pct - 60) / 40) * 3);
+  return Math.min(7, Math.max(1, Math.round(grade * 10) / 10));
+}
+
+// ── MAIN CALCULATE ──
+function calculateFinalGrade() {
+  // --- Listening A ---
+  let autoLA = 0;
+  Object.keys(LA_KEY).forEach(n => {
+    if (getRadio(n) === LA_KEY[n]) autoLA++;
+  });
+
+  // --- Listening B T/F ---
+  let autoLBtf = 0;
+  for (let i=1; i<=5; i++) {
+    if (tfAnswers[i] === LB_TF[i]) autoLBtf++;
+  }
+
+  // --- Listening B corrections (Gemini) ---
+  let autoLBcorr = 0;
+  // Conv 1 is TRUE — no correction needed, auto 0
+  // Conv 2,3,4,5 are FALSE — Gemini scores
+  if (autoGeminiDone) {
+    [2,3,4,5].forEach(i => {
+      autoLBcorr += parseFloat(g(`lb_gscore${i}`)) || 0;
+    });
+  }
+
+  // --- Reading A ---
+  let autoRA = 0;
+  Object.keys(RA_KEY).forEach(id => {
+    if (g(id) === RA_KEY[id]) autoRA++;
+  });
+
+  // --- Reading B (Gemini) ---
+  let autoRB = 0;
+  if (autoGeminiDone) {
+    autoRB = [1,2,3,4].reduce((s,i) => s + (parseFloat(g(`rb_gscore${i}`)) || 0), 0);
+  }
+
+  // --- Writing (rubric) ---
+  const autoWR = updateRubric();
+
+  // --- Totals ---
+  const totalListening = autoLA + autoLBtf + (autoGeminiDone ? autoLBcorr : 0);
+  const totalReading   = autoRA + (autoGeminiDone ? autoRB : 0);
+  const totalWriting   = autoGeminiDone ? autoWR : 0;
+  const grandTotal     = totalListening + totalReading + totalWriting;
+
+  // --- Update summary ---
+  document.getElementById('res-la').textContent      = `${autoLA} / 4`;
+  document.getElementById('res-lb-tf').textContent   = `${autoLBtf} / 5`;
+  document.getElementById('res-lb-corr').textContent = autoGeminiDone ? `${autoLBcorr.toFixed(1)} / 4` : '— (pendiente Gemini)';
+  document.getElementById('res-ra').textContent      = `${autoRA} / 6`;
+  document.getElementById('res-rb').textContent      = autoGeminiDone ? `${autoRB.toFixed(1)} / 6` : '— (pendiente Gemini)';
+  document.getElementById('res-wr').textContent      = autoGeminiDone ? `${autoWR.toFixed(1)} / 12` : '— (pendiente Gemini)';
+  document.getElementById('res-total').innerHTML     = autoGeminiDone ? `<strong>${grandTotal.toFixed(1)} / 36</strong>` : '<strong>— (pendiente Gemini)</strong>';
+  document.getElementById('resultName').textContent  = g('studentName') || 'Student';
+
+  // --- Grade display ---
+  const gradeEl = document.getElementById('gradeDisplay');
+  if (autoGeminiDone) {
+    const grade = calcGrade(grandTotal, 36);
+    const gradeColor = grade >= 4 ? 'var(--success)' : 'var(--danger)';
+    const gradeMsg = grade >= 6 ? '🌟 ¡Excelente trabajo!' : grade >= 4 ? '👍 ¡Aprobado! Sigue practicando.' : '💪 Necesitas más práctica. ¡Tú puedes!';
+    gradeEl.innerHTML = `
+      <div class="grade-display">
+        <div class="grade-number" style="color:${gradeColor}">${grade.toFixed(1)}</div>
+        <div class="grade-label">Nota final (escala chilena — 60% = 4.0)</div>
+        <div class="grade-msg">${gradeMsg}</div>
+      </div>`;
+  } else {
+    gradeEl.innerHTML = `
+      <div class="grade-display" style="border-color:#f59e0b;background:linear-gradient(135deg,#fffbeb,#fef9c3);">
+        <div style="font-size:2.5em;margin-bottom:8px;">⏳</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:1.3em;color:#d97706;">Nota pendiente</div>
+        <div style="font-size:0.85em;color:#92400e;margin-top:6px;line-height:1.5;">Completa la revisión con Gemini y haz clic en "Actualizar nota".</div>
+        <div style="font-size:2em;color:#f59e0b;margin-top:10px;animation:bounce 1.2s infinite;">↓</div>
+      </div>`;
+  }
+
+  // --- Show results ---
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('partialBar').style.display = autoGeminiDone ? 'none' : 'block';
+  document.getElementById('geminiBlock').style.display = autoGeminiDone ? 'none' : 'block';
+
+  if (autoGeminiDone) {
+    document.getElementById('filterTabs').style.display = 'flex';
+    document.getElementById('feedbackSection').style.display = 'block';
+    buildFeedback(autoLA, autoLBtf, autoRA);
+  } else if (partialVisible) {
+    document.getElementById('feedbackSection').style.display = 'block';
+    document.getElementById('partialNote').style.display = 'block';
+    buildFeedback(autoLA, autoLBtf, autoRA);
+  } else {
+    document.getElementById('feedbackSection').style.display = 'none';
+  }
+
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+}
+
+function updateWithGeminiScores() {
+  autoGeminiDone = true;
+  // Replace gemini block with confirmation
+  document.getElementById('geminiBlock').innerHTML = `
+    <div style="background:#f0fdf4;border:1px solid #6ee7b7;border-radius:12px;padding:16px 22px;font-size:0.88em;color:#065f46;">
+      ✅ <strong>Revisión con Gemini completada.</strong> Nota final calculada con todos los puntajes.
+    </div>`;
+  calculateFinalGrade();
+}
+
+// ── PARTIAL FEEDBACK TOGGLE ──
+function togglePartialFeedback() {
+  partialVisible = !partialVisible;
+  document.getElementById('partialBtn').textContent = partialVisible ? '👁 Ocultar retroalimentación parcial' : '👁 Ver retroalimentación parcial';
+  calculateFinalGrade();
+}
+
+// ── FEEDBACK BUILDER ──
+function buildFeedback(autoLA, autoLBtf, autoRA) {
+  const LA_labels = {
+    la1: 'How did Sofía feel about her vacation?',
+    la2: 'Where did Sofía stay?',
+    la3: 'What did David forget?',
+    la4: "What was the problem with David's vacation?"
+  };
+  const LA_correct = { la1:'c) It was fantastic.', la2:'b) In a hostel.', la3:'a) His camera.', la4:'d) It rained a lot.' };
+  const LA_options = {
+    la1: {a:'It was okay.',b:'It was boring.',c:'It was fantastic.',d:'It was tiring.'},
+    la2: {a:'In a hotel.',b:'In a hostel.',c:"At her brother's house.",d:'In a tent.'},
+    la3: {a:'His camera.',b:'His passport.',c:'His phone.',d:'His umbrella.'},
+    la4: {a:"He didn't see his family.",b:'The hotel was expensive.',c:'He lost his phone.',d:'It rained a lot.'}
+  };
+  const LB_labels = {
+    1:'Pedro went to the party on Saturday.',
+    2:'Camila watched the game at home.',
+    3:'Valentina painted her room alone.',
+    4:'It rained during their walk.',
+    5:'Isabela played volleyball alone.'
+  };
+  const LB_explain = {
+    1:'True — Pedro confirmed he went to the party.',
+    2:'False — She watched it at her sister\'s house.',
+    3:'False — Her brother helped her.',
+    4:'False — It didn\'t rain. It was sunny all day.',
+    5:'False — She played with her friends.'
+  };
+  const RA_labels = {
+    ra1:'Is there a washing machine in the apartment?',
+    ra2:'Is there a supermarket near the apartment?',
+    ra3:'Is there a parking space?',
+    ra4:'Is there air conditioning in the apartment?',
+    ra5:'Is there a balcony?',
+    ra6:'Are there any restaurants near the apartment?'
+  };
+  const RA_correct_text = {
+    ra1:'D — Yes, there is. It\'s next to the kitchen.',
+    ra2:'F — Yes, there is. It\'s open every day and it\'s two blocks away.',
+    ra3:'A — No, there isn\'t, but there is a public parking lot one block away.',
+    ra4:'G — No, there isn\'t, but there are fans in every room.',
+    ra5:'C — Yes, there is. There is a great view of the mountains from the balcony.',
+    ra6:'E — Yes! There is a very good restaurant across the street.'
+  };
+
+  let html = '';
+
+  // --- Listening A feedback ---
+  html += `<div class="feedback-part">
+    <div class="feedback-part-header listening">🎧 Listening A — Multiple Choice</div>`;
+  let laCorrect = 0;
+  Object.keys(LA_KEY).forEach((n, i) => {
+    const student = getRadio(n);
+    const correct = LA_KEY[n];
+    const isOk = student === correct;
+    if (isOk) laCorrect++;
+    const studentText = student ? `${student}) ${LA_options[n][student]}` : '(no answer)';
+    html += `<div class="feedback-item" data-status="${isOk?'correct':'incorrect'}">
+      <div class="fi-label">
+        <span>${i+1}. ${LA_labels[n]}</span>
+        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correct':'❌ Incorrect'}</span>
+      </div>
+      <div class="student-ans">Your answer: ${studentText}</div>
+      ${!isOk ? `<div class="correct-ans">✅ Correct answer: ${LA_correct[n]}</div>` : ''}
+      <div class="explanation">${isOk ? 'Great job!' : 'Listen again carefully to identify the key information.'}</div>
+    </div>`;
+  });
+  const laMsg = laCorrect === 4 ? ['high','🌟 ¡Perfecto en Listening A!'] : laCorrect >= 2 ? ['mid','💡 Buen esfuerzo. Escucha de nuevo las partes que te costaron.'] : ['low','💪 Practica más el listening. Intenta leer las preguntas antes de escuchar.'];
+  html += `<div class="section-msg ${laMsg[0]}">${laMsg[1]}</div></div>`;
+
+  // --- Listening B T/F feedback ---
+  html += `<div class="feedback-part">
+    <div class="feedback-part-header listening">🎧 Listening B — True / False</div>`;
+  let lbCorrect = 0;
+  for (let i=1; i<=5; i++) {
+    const student = tfAnswers[i] || '(no answer)';
+    const correct = LB_TF[i];
+    const isOk = tfAnswers[i] === correct;
+    if (isOk) lbCorrect++;
+    html += `<div class="feedback-item" data-status="${isOk?'correct':'incorrect'}">
+      <div class="fi-label">
+        <span>Conv. ${i}: ${LB_labels[i]}</span>
+        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correct':'❌ Incorrect'}</span>
+      </div>
+      <div class="student-ans">Your answer: ${student}</div>
+      ${!isOk ? `<div class="correct-ans">✅ Correct: ${correct}</div>` : ''}
+      <div class="explanation">${LB_explain[i]}</div>
+    </div>`;
+  }
+  const lbMsg = lbCorrect === 5 ? ['high','🌟 ¡Perfecto en T/F!'] : lbCorrect >= 3 ? ['mid','💡 Buen trabajo. Revisa las conversaciones que marcaste incorrectamente.'] : ['low','💪 Presta atención a los detalles específicos en cada conversación.'];
+  html += `<div class="section-msg ${lbMsg[0]}">${lbMsg[1]}</div></div>`;
+
+  // --- Listening B corrections (Gemini info) ---
+  if (autoGeminiDone) {
+    html += `<div class="feedback-part">
+      <div class="feedback-part-header listening">🎧 Listening B — Correcciones (revisión Gemini)</div>
+      <div class="feedback-item" data-status="info">
+        <div class="fi-label"><span class="tag info-tag">ℹ️ Info</span></div>
+        <div class="explanation">Las correcciones de los ítems falsos fueron revisadas por Gemini. Revisa el detalle en el bloque de revisión arriba.</div>
+      </div>
+    </div>`;
+  }
+
+  // --- Reading A feedback ---
+  html += `<div class="feedback-part">
+    <div class="feedback-part-header reading">📖 Reading A — Matching</div>`;
+  let raCorrect = 0;
+  Object.keys(RA_KEY).forEach((id, i) => {
+    const student = g(id) || '(no answer)';
+    const correct = RA_KEY[id];
+    const isOk = student === correct;
+    if (isOk) raCorrect++;
+    html += `<div class="feedback-item" data-status="${isOk?'correct':'incorrect'}">
+      <div class="fi-label">
+        <span>${i+1}. ${RA_labels[id]}</span>
+        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correct':'❌ Incorrect'}</span>
+      </div>
+      <div class="student-ans">Your answer: ${student}</div>
+      ${!isOk ? `<div class="correct-ans">✅ Correct: ${RA_correct_text[id]}</div>` : ''}
+    </div>`;
+  });
+  const raMsg = raCorrect === 6 ? ['high','🌟 ¡Perfecto en Reading A!'] : raCorrect >= 4 ? ['mid','💡 Buen trabajo. Revisa las respuestas con there is / there are.'] : ['low','💪 Practica la estructura there is / there isn\'t / there are / there aren\'t.'];
+  html += `<div class="section-msg ${raMsg[0]}">${raMsg[1]}</div></div>`;
+
+  // --- Reading B (Gemini info) ---
+  if (autoGeminiDone) {
+    html += `<div class="feedback-part">
+      <div class="feedback-part-header reading">📖 Reading B — Preguntas abiertas (revisión Gemini)</div>
+      <div class="feedback-item" data-status="info">
+        <div class="fi-label"><span class="tag info-tag">ℹ️ Info</span></div>
+        <div class="explanation">Tus respuestas abiertas de Reading B fueron evaluadas por Gemini. Revisa los puntajes y comentarios en el bloque de revisión.</div>
+      </div>
+    </div>`;
+  }
+
+  // --- Writing (Gemini info) ---
+  if (autoGeminiDone) {
+    html += `<div class="feedback-part">
+      <div class="feedback-part-header writing">✍️ Writing — Revisión Gemini + Rúbrica</div>
+      <div class="feedback-item" data-status="info">
+        <div class="fi-label"><span class="tag info-tag">ℹ️ Info</span></div>
+        <div class="explanation">Tu texto de Writing fue evaluado con la rúbrica de 4 criterios. Puntaje obtenido: <strong>${updateRubric().toFixed(1)} / 12</strong>.</div>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById('feedbackContent').innerHTML = html;
+}
+
+// ── FILTER FEEDBACK ──
+function filterFeedback(type) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.feedback-item').forEach(item => {
+    const status = item.dataset.status;
+    if (type === 'all') item.style.display = '';
+    else if (type === 'correct')   item.style.display = status === 'correct' ? '' : 'none';
+    else if (type === 'incorrect') item.style.display = (status === 'incorrect' || status === 'info') ? '' : 'none';
+  });
+}
+
+// ── GEMINI MODAL ──
+function showGeminiModal(title) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('geminiModal').classList.add('active');
+}
+function closeGeminiModal() {
+  document.getElementById('geminiModal').classList.remove('active');
+}
+function openGemini() {
+  closeGeminiModal();
+  window.open('https://gemini.google.com', '_blank');
+}
+function copyToClipboard(text) {
+  // Try modern API first, fall back to execCommand
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).catch(() => {
+      fallbackCopy(text);
+    });
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+}
+
+// ── GEMINI PROMPTS ──
+function copyWritingPrompt() {
+  const text = g('writingText').trim() || '(sin respuesta)';
+  const geminiText = `Eres un profesor experto en inglés como lengua extranjera para nivel A1–A2 (CEFR).
+
+Un estudiante de nivel A1–A2 escribió el siguiente texto sobre lo que hizo el viernes pasado:
+
+TEXTO DEL ESTUDIANTE: "${text}"
+
+REQUISITOS DE LA TAREA:
+1. Describir actividades en la mañana, tarde y noche
+2. Mencionar lugares y personas
+3. Describir actividades realizadas en esos lugares
+4. Mínimo 40 palabras
+5. Usar simple past
+
+RÚBRICA (12 puntos total):
+
+CRITERIO 1 — Coherencia y extensión (máx. 4 pts):
+- 4 pts: ≥40 palabras, presenta todas las ideas requeridas de forma coherente
+- 3,2 pts: 30–39 palabras, presenta todas las ideas requeridas y de forma coherente
+- 2,4 pts: 20–29 palabras, cobertura parcial o alguna idea incoherente
+- 1,2 pts: 10–19 palabras, baja cobertura o incoherencia general
+- 0 pts: menos de 10 palabras o nula cobertura. No responde.
+
+CRITERIO 2 — Vocabulario (máx. 3 pts):
+- 3 pts: usa correctamente ≥6 palabras del vocabulario aprendido
+- 2,4 pts: usa correctamente al menos 5 palabras del vocabulario aprendido
+- 1,8 pts: usa correctamente al menos 4 palabras del vocabulario aprendido
+- 0,9 pts: usa correctamente al menos 3 palabras del vocabulario aprendido
+- 0 pts: 2 o menos palabras o vocabulario incorrecto. No responde.
+
+CRITERIO 3 — Gramática (máx. 3 pts):
+- 3 pts: oraciones correctas; máximo 1 error sin impacto en la comprensión
+- 2,4 pts: mayoritariamente correctas; 2–3 errores sin impacto
+- 1,8 pts: errores en 4 o 5 casos; dificulta parcialmente la comprensión
+- 0,9 pts: errores en 6 o 7 casos; dificulta significativamente la comprensión
+- 0 pts: 8+ errores; impide la comprensión. No responde.
+
+CRITERIO 4 — Ortografía (máx. 2 pts):
+- 2 pts: máximo 2 errores ortográficos sin impacto en la comprensión
+- 1,6 pts: 3–4 errores; mensaje comprensible
+- 1,2 pts: 5–6 errores; afectan parcialmente el mensaje
+- 0,6 pts: 7–8 errores; dificultan la comprensión
+- 0 pts: más de 9 errores; impiden la comprensión. No responde.
+
+IMPORTANTE: Los estudiantes A1–A2 SIEMPRE cometen errores de artículos (a/an/the) y spelling básico. No penalices estos errores con más de 0,5 pts en total. El objetivo es evaluar si el estudiante puede comunicar ideas en simple past.
+
+Responde SIEMPRE en este formato exacto, con dos bloques separados:
+
+BLOQUE 1 — EVALUACIÓN:
+Criterio 1 (Coherencia y extensión): [puntaje] — [justificación breve, 1–2 oraciones]
+Criterio 2 (Vocabulario): [puntaje] — [justificación breve]
+Criterio 3 (Gramática): [puntaje] — [justificación breve, cita el error si corresponde]
+Criterio 4 (Ortografía): [puntaje] — [justificación breve]
+
+BLOQUE 2 — PUNTAJES PARA INGRESAR EN EL MOCK TEST:
+┌──────────────────────────────────────────────────┐
+│ Coherencia y extensión (máx. 4 pts): [puntaje]  │
+│ Vocabulario (máx. 3 pts): [puntaje]             │
+│ Gramática (máx. 3 pts): [puntaje]               │
+│ Ortografía (máx. 2 pts): [puntaje]              │
+│ TOTAL: [suma] / 12 pts                          │
+└──────────────────────────────────────────────────┘
+Ingresa cada puntaje del Bloque 2 en el campo correspondiente de la rúbrica del mock test.`;
+
+  copyToClipboard(geminiText);
+  showGeminiModal('¡Prompt de Writing copiado!');
+}
+
+function copyLBPrompt() {
+  const j2 = g('lb_j2') || '(sin respuesta)';
+  const j3 = g('lb_j3') || '(sin respuesta)';
+  const j4 = g('lb_j4') || '(sin respuesta)';
+  const j5 = g('lb_j5') || '(sin respuesta)';
+
+  const geminiText = `Eres un profesor experto en inglés como lengua extranjera para nivel A1–A2 (CEFR).
+
+Un estudiante escuchó cinco conversaciones cortas y debía identificar si ciertas afirmaciones eran verdaderas o falsas. Para las afirmaciones FALSAS, debía escribir la corrección.
+
+Las siguientes afirmaciones son FALSAS. Evalúa SOLO la corrección escrita por el estudiante.
+Puntaje: 1 pt si demuestra comprensión auditiva correcta (acepta errores de ortografía y gramática menores), 0 pts si es incorrecta o en blanco.
+
+CONVERSACIÓN 2:
+Afirmación: "Camila watched the game at home."
+Corrección modelo: "She watched it at her sister's house."
+Corrección del estudiante: "${j2}"
+
+CONVERSACIÓN 3:
+Afirmación: "Valentina painted her room alone."
+Corrección modelo: "Her brother helped her."
+Corrección del estudiante: "${j3}"
+
+CONVERSACIÓN 4:
+Afirmación: "It rained during their walk."
+Corrección modelo: "It didn't rain. It was sunny all day."
+Corrección del estudiante: "${j4}"
+
+CONVERSACIÓN 5:
+Afirmación: "Isabela played volleyball alone."
+Corrección modelo: "She played with her friends."
+Corrección del estudiante: "${j5}"
+
+Responde SIEMPRE en este formato exacto, con dos bloques separados:
+
+BLOQUE 1 — EVALUACIÓN:
+Conversación 2: [✅ o ❌] — [justificación breve, 1 oración]
+Conversación 3: [✅ o ❌] — [justificación breve]
+Conversación 4: [✅ o ❌] — [justificación breve]
+Conversación 5: [✅ o ❌] — [justificación breve]
+
+BLOQUE 2 — PUNTAJES PARA INGRESAR EN EL MOCK TEST:
+┌──────────────────────────────────────────────────┐
+│ Conv. 2 — Corrección Camila (0 o 1 pt): [pts]  │
+│ Conv. 3 — Corrección Valentina (0 o 1 pt): [pts]│
+│ Conv. 4 — Corrección Rodrigo (0 o 1 pt): [pts] │
+│ Conv. 5 — Corrección Isabela (0 o 1 pt): [pts] │
+│ TOTAL: [suma] / 4 pts                           │
+└──────────────────────────────────────────────────┘
+Ingresa cada puntaje del Bloque 2 en el campo correspondiente del mock test.`;
+
+  copyToClipboard(geminiText);
+  showGeminiModal('¡Prompt de Listening B copiado!');
+}
+
+function copyRBPrompt() {
+  const q1 = g('rb_q1') || '(sin respuesta)';
+  const q2 = g('rb_q2') || '(sin respuesta)';
+  const q3 = g('rb_q3') || '(sin respuesta)';
+  const q4 = g('rb_q4') || '(sin respuesta)';
+
+  const geminiText = `Eres un profesor experto en inglés como lengua extranjera para nivel A1–A2 (CEFR).
+
+Un estudiante de nivel A1–A2 ha respondido preguntas abiertas sobre el siguiente texto:
+
+TEXTO LEÍDO: "A trip to remember" — Lucas y su amigo Marco viajaron dos semanas por Europa (Polonia, República Checa, Hungría). Lucas no disfrutó Varsovia (frío y lluvia), pero adoró Praga (edificios, comida, caminaron sin mapa). En Budapest vieron el río Danubio, el Puente de las Cadenas y se alojaron en un hostel donde la gente los ayudó.
+
+SISTEMA DE PUNTAJE:
+- Preguntas de 1 pt: 1 pt completo / 0,5 pts parcial / 0 incorrecto
+- Preguntas de 2 pts: hasta 2 pts (1 pt por idea completa, 0,5 pts por idea incompleta)
+
+PREGUNTA 1 (máx. 1 pt): How long was the trip?
+Respuesta modelo: Two weeks. (También: "2 weeks" o "14 days")
+Respuesta del estudiante: "${q1}"
+
+PREGUNTA 2 (máx. 1 pt): Who did NOT enjoy the first city?
+Respuesta modelo: Lucas (the narrator) did not enjoy Warsaw.
+Respuestas aceptables: "Lucas" / "the narrator" / "he"
+Respuesta del estudiante: "${q2}"
+
+PREGUNTA 3 (máx. 2 pts): What did they do in Prague? Write 2 ideas.
+Respuesta modelo: They walked a lot and saw beautiful old buildings. / They had fantastic food. / They walked in the wrong direction.
+Respuesta del estudiante: "${q3}"
+
+PREGUNTA 4 (máx. 2 pts): What did the narrator like about Budapest? Write 2 ideas.
+Respuesta modelo: They walked next to the Danube River. / They saw the Chain Bridge. / The city looked beautiful at night. / The people in the hostel helped them.
+Respuesta del estudiante: "${q4}"
+
+IMPORTANTE: Acepta respuestas con errores gramaticales menores si la información es correcta. Acepta paráfrasis que demuestren comprensión aunque no sean textuales.
+
+Responde SIEMPRE en este formato exacto, con dos bloques separados:
+
+BLOQUE 1 — EVALUACIÓN:
+Pregunta 1 (máx. 1 pt): [puntaje] — [justificación breve en español]
+Pregunta 2 (máx. 1 pt): [puntaje] — [justificación breve]
+Pregunta 3 (máx. 2 pts): [puntaje] — [justificación breve]
+Pregunta 4 (máx. 2 pts): [puntaje] — [justificación breve]
+
+BLOQUE 2 — PUNTAJES PARA INGRESAR EN EL MOCK TEST:
+┌──────────────────────────────────────────────────┐
+│ Pregunta 1 (máx. 1 pt): [puntaje]              │
+│ Pregunta 2 (máx. 1 pt): [puntaje]              │
+│ Pregunta 3 (máx. 2 pts): [puntaje]             │
+│ Pregunta 4 (máx. 2 pts): [puntaje]             │
+│ TOTAL: [suma] / 6 pts                           │
+└──────────────────────────────────────────────────┘
+Ingresa cada puntaje del Bloque 2 en el campo correspondiente del mock test.`;
+
+  copyToClipboard(geminiText);
+  showGeminiModal('¡Prompt de Reading B copiado!');
+}
+
+// ── SCROLL HELPER ──
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.style.outline = '3px solid #f59e0b';
+    setTimeout(() => { el.style.outline = ''; }, 2000);
+  }
+}
+
+// ── INIT ──
+window.addEventListener('DOMContentLoaded', loadSaved);
+</script>
+</body>
+</html>
