@@ -288,10 +288,12 @@ audio {
   font-size: 0.88em;
   transition: all 0.15s;
   background: white;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
 }
 .mc-option:hover { border-color: var(--primary-light); background: #f5f3ff; }
 .mc-option input[type="radio"] { accent-color: var(--primary); flex-shrink: 0; }
-.mc-option label { cursor: pointer; line-height: 1.3; }
 
 /* T/F SECTION */
 .tf-block {
@@ -1000,34 +1002,34 @@ audio {
           <!-- Q1 -->
           <div class="mc-card">
             <div class="mc-question">1. How was Sofía's vacation?</div>
-            <div class="mc-option"><input type="radio" name="la1" id="la1a" value="a" onchange="saveAll()"><label for="la1a">a) It was okay.</label></div>
-            <div class="mc-option"><input type="radio" name="la1" id="la1b" value="b" onchange="saveAll()"><label for="la1b">b) It was boring.</label></div>
-            <div class="mc-option"><input type="radio" name="la1" id="la1c" value="c" onchange="saveAll()"><label for="la1c">c) It was fantastic.</label></div>
-            <div class="mc-option"><input type="radio" name="la1" id="la1d" value="d" onchange="saveAll()"><label for="la1d">d) It was relaxing.</label></div>
+            <label class="mc-option" for="la1a"><input type="radio" name="la1" id="la1a" value="a" onchange="saveAll()">a) It was okay.</label>
+            <label class="mc-option" for="la1b"><input type="radio" name="la1" id="la1b" value="b" onchange="saveAll()">b) It was boring.</label>
+            <label class="mc-option" for="la1c"><input type="radio" name="la1" id="la1c" value="c" onchange="saveAll()">c) It was fantastic.</label>
+            <label class="mc-option" for="la1d"><input type="radio" name="la1" id="la1d" value="d" onchange="saveAll()">d) It was relaxing.</label>
           </div>
           <!-- Q2 -->
           <div class="mc-card">
             <div class="mc-question">2. Where did Sofía stay?</div>
-            <div class="mc-option"><input type="radio" name="la2" id="la2a" value="a" onchange="saveAll()"><label for="la2a">a) In a hotel.</label></div>
-            <div class="mc-option"><input type="radio" name="la2" id="la2b" value="b" onchange="saveAll()"><label for="la2b">b) In a hostel.</label></div>
-            <div class="mc-option"><input type="radio" name="la2" id="la2c" value="c" onchange="saveAll()"><label for="la2c">c) At her brother's house.</label></div>
-            <div class="mc-option"><input type="radio" name="la2" id="la2d" value="d" onchange="saveAll()"><label for="la2d">d) In a tent.</label></div>
+            <label class="mc-option" for="la2a"><input type="radio" name="la2" id="la2a" value="a" onchange="saveAll()">a) In a hotel.</label>
+            <label class="mc-option" for="la2b"><input type="radio" name="la2" id="la2b" value="b" onchange="saveAll()">b) In a hostel.</label>
+            <label class="mc-option" for="la2c"><input type="radio" name="la2" id="la2c" value="c" onchange="saveAll()">c) At her brother's house.</label>
+            <label class="mc-option" for="la2d"><input type="radio" name="la2" id="la2d" value="d" onchange="saveAll()">d) In a tent.</label>
           </div>
           <!-- Q3 -->
           <div class="mc-card">
             <div class="mc-question">3. What was the problem with David's bag?</div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3a" value="a" onchange="saveAll()"><label for="la3a">a) It was too small.</label></div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3b" value="b" onchange="saveAll()"><label for="la3b">b) It was very heavy.</label></div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3c" value="c" onchange="saveAll()"><label for="la3c">c) He packed the wrong things.</label></div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3d" value="d" onchange="saveAll()"><label for="la3d">d) He left it at home.</label></div>
+            <label class="mc-option" for="la3a"><input type="radio" name="la3" id="la3a" value="a" onchange="saveAll()">a) It was too small.</label>
+            <label class="mc-option" for="la3b"><input type="radio" name="la3" id="la3b" value="b" onchange="saveAll()">b) It was very heavy.</label>
+            <label class="mc-option" for="la3c"><input type="radio" name="la3" id="la3c" value="c" onchange="saveAll()">c) He packed the wrong things.</label>
+            <label class="mc-option" for="la3d"><input type="radio" name="la3" id="la3d" value="d" onchange="saveAll()">d) He left it at home.</label>
           </div>
           <!-- Q4 -->
           <div class="mc-card">
             <div class="mc-question">4. What was the problem with David's vacation?</div>
-            <div class="mc-option"><input type="radio" name="la4" id="la4a" value="a" onchange="saveAll()"><label for="la4a">a) He didn't see his family.</label></div>
-            <div class="mc-option"><input type="radio" name="la4" id="la4b" value="b" onchange="saveAll()"><label for="la4b">b) The hotel was expensive.</label></div>
-            <div class="mc-option"><input type="radio" name="la4" id="la4c" value="c" onchange="saveAll()"><label for="la4c">c) He lost his phone.</label></div>
-            <div class="mc-option"><input type="radio" name="la4" id="la4d" value="d" onchange="saveAll()"><label for="la4d">d) It rained a lot.</label></div>
+            <label class="mc-option" for="la4a"><input type="radio" name="la4" id="la4a" value="a" onchange="saveAll()">a) He didn't see his family.</label>
+            <label class="mc-option" for="la4b"><input type="radio" name="la4" id="la4b" value="b" onchange="saveAll()">b) The hotel was expensive.</label>
+            <label class="mc-option" for="la4c"><input type="radio" name="la4" id="la4c" value="c" onchange="saveAll()">c) He lost his phone.</label>
+            <label class="mc-option" for="la4d"><input type="radio" name="la4" id="la4d" value="d" onchange="saveAll()">d) It rained a lot.</label>
           </div>
         </div>
 
