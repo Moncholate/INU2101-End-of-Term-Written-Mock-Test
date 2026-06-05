@@ -999,11 +999,11 @@ audio {
         <div class="mc-grid" id="mc-grid-la">
           <!-- Q1 -->
           <div class="mc-card">
-            <div class="mc-question">1. How did Sofía feel about her vacation?</div>
+            <div class="mc-question">1. How was Sofía's vacation?</div>
             <div class="mc-option"><input type="radio" name="la1" id="la1a" value="a" onchange="saveAll()"><label for="la1a">a) It was okay.</label></div>
             <div class="mc-option"><input type="radio" name="la1" id="la1b" value="b" onchange="saveAll()"><label for="la1b">b) It was boring.</label></div>
             <div class="mc-option"><input type="radio" name="la1" id="la1c" value="c" onchange="saveAll()"><label for="la1c">c) It was fantastic.</label></div>
-            <div class="mc-option"><input type="radio" name="la1" id="la1d" value="d" onchange="saveAll()"><label for="la1d">d) It was tiring.</label></div>
+            <div class="mc-option"><input type="radio" name="la1" id="la1d" value="d" onchange="saveAll()"><label for="la1d">d) It was relaxing.</label></div>
           </div>
           <!-- Q2 -->
           <div class="mc-card">
@@ -1015,11 +1015,11 @@ audio {
           </div>
           <!-- Q3 -->
           <div class="mc-card">
-            <div class="mc-question">3. What did David forget?</div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3a" value="a" onchange="saveAll()"><label for="la3a">a) His camera.</label></div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3b" value="b" onchange="saveAll()"><label for="la3b">b) His passport.</label></div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3c" value="c" onchange="saveAll()"><label for="la3c">c) His phone.</label></div>
-            <div class="mc-option"><input type="radio" name="la3" id="la3d" value="d" onchange="saveAll()"><label for="la3d">d) His umbrella.</label></div>
+            <div class="mc-question">3. What was the problem with David's bag?</div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3a" value="a" onchange="saveAll()"><label for="la3a">a) It was too small.</label></div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3b" value="b" onchange="saveAll()"><label for="la3b">b) It was very heavy.</label></div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3c" value="c" onchange="saveAll()"><label for="la3c">c) He packed the wrong things.</label></div>
+            <div class="mc-option"><input type="radio" name="la3" id="la3d" value="d" onchange="saveAll()"><label for="la3d">d) He left it at home.</label></div>
           </div>
           <!-- Q4 -->
           <div class="mc-card">
@@ -1313,19 +1313,19 @@ audio {
           </div>
         </div>
 
-        <textarea class="writing-textarea" id="writingText" placeholder="Write your text here..." oninput="updateWordCount(); saveAll()"></textarea>
-        <div class="word-counter" id="wordCounter">Words: 0 / 40 minimum</div>
+        <textarea class="writing-textarea" id="writingText" placeholder="Escribe tu texto aquí..." oninput="updateWordCount(); saveAll()"></textarea>
+        <div class="word-counter" id="wordCounter">Palabras: 0 / mínimo 40</div>
 
         <!-- Gemini button for writing -->
         <button class="gemini-btn" onclick="copyWritingPrompt()">
-          ✨ Copy Gemini evaluation prompt
+          ✨ Copiar prompt de evaluación Gemini
         </button>
 
 
         <!-- RUBRIC -->
         <div class="rubric-box">
-          <div class="rubric-title">📊 Writing Rubric — Self-evaluation (completed by teacher after Gemini review)</div>
-          <div class="rubric-note">Select one option per criterion after reviewing the Gemini evaluation.</div>
+          <div class="rubric-title">📊 Rúbrica de Writing</div>
+          <div class="rubric-note">Completa esta rúbrica usando la evaluación por criterio que te entregó Gemini. Selecciona el nivel que Gemini indicó para cada criterio.</div>
 
           <!-- Criterion 1 -->
           <div class="criterion">
@@ -1375,7 +1375,7 @@ audio {
             </div>
           </div>
 
-          <div class="rubric-subtotal">Writing subtotal: <span id="rubricTotal">0</span> / 12 pts</div>
+          <div class="rubric-subtotal">Puntaje Writing: <span id="rubricTotal">0</span> / 12 pts</div>
         </div>
 
       </div><!-- /section-body writing -->
@@ -1383,10 +1383,10 @@ audio {
 
     <!-- UNANSWERED BANNER -->
     <div class="unanswered-banner" id="unansweredBanner">
-      ⚠️ <strong>Some questions are unanswered:</strong>
+      ⚠️ <strong>Hay preguntas sin responder:</strong>
       <ul id="unansweredList"></ul>
-      <em style="font-size:0.85em;">You can still submit — unanswered questions will receive 0 points.</em><br>
-      <button class="continue-btn" onclick="proceedCalculate()">Continue anyway →</button>
+      <em style="font-size:0.85em;">Puedes continuar igual — las preguntas sin responder recibirán 0 puntos.</em><br>
+      <button class="continue-btn" onclick="proceedCalculate()">Continuar de todos modos →</button>
     </div>
 
     <!-- CALCULATE BUTTON -->
@@ -1464,7 +1464,7 @@ audio {
         <!-- Writing -->
         <div class="gemini-sub">
           <h5>✍️ Paso 3 — Writing</h5>
-          <p style="font-size:0.85em;color:var(--muted);margin-bottom:6px;">Usa el botón "Copy Gemini evaluation prompt" en la sección Writing y luego selecciona el nivel en la rúbrica.</p>
+          <p style="font-size:0.85em;color:var(--muted);margin-bottom:6px;">Usa el botón "Copiar prompt de evaluación Gemini" en la sección Writing y luego selecciona el nivel en la rúbrica.</p>
           <p style="font-size:0.85em;color:var(--muted);">Puntaje Writing actual (rúbrica): <strong><span id="writingScoreDisplay">0</span> / 12</strong></p>
         </div>
 
@@ -1509,7 +1509,7 @@ audio {
 
 <script>
 // ── ANSWER KEYS ──
-const LA_KEY = { la1:'c', la2:'b', la3:'a', la4:'d' };
+const LA_KEY = { la1:'c', la2:'b', la3:'b', la4:'d' };
 const LB_TF  = { 1:'T', 2:'F', 3:'F', 4:'F', 5:'F' };
 const LB_CORR = {
   2: 'She watched it at her sister\'s house.',
@@ -1533,16 +1533,10 @@ function trackPlay(audioId) {
   if (!playCounts[audioId]) playCounts[audioId] = 0;
   playCounts[audioId]++;
   const counter = document.getElementById('counter_' + audioId);
-  const audio   = document.getElementById(audioId);
   const count   = playCounts[audioId];
   if (count >= 2) {
-    counter.textContent = '⚠️ Límite de 2 reproducciones alcanzado';
+    counter.textContent = '⚠️ Límite de 2 reproducciones alcanzado — audio sigue disponible';
     counter.className   = 'play-counter limit';
-    audio.addEventListener('ended', () => {
-      audio.controls = false;
-      audio.style.opacity = '0.4';
-      audio.style.pointerEvents = 'none';
-    }, { once: true });
   } else if (count === 1) {
     counter.textContent = 'Plays: 1 / 2 — 1 reproducción restante';
     counter.className   = 'play-counter warning';
@@ -1564,7 +1558,7 @@ function updateWordCount() {
   const text  = document.getElementById('writingText').value.trim();
   const words = text ? text.split(/\s+/).length : 0;
   const el    = document.getElementById('wordCounter');
-  el.textContent = `Words: ${words} / 40 minimum`;
+  el.textContent = `Palabras: ${words} / mínimo 40`;
   el.className   = 'word-counter ' + (words >= 40 ? 'good' : words >= 25 ? 'warn' : 'bad');
 }
 
@@ -1608,6 +1602,7 @@ function saveAll() {
     };
     localStorage.setItem(SAVE_KEY, JSON.stringify(data));
     flashToast();
+    checkForAnswers();
   }, 900);
 }
 
@@ -1638,9 +1633,43 @@ function loadSaved() {
   document.getElementById('savedBanner').style.display = 'flex';
 }
 
+function checkForAnswers() {
+  const hasAnswers =
+    g('studentName') ||
+    getRadio('la1') || getRadio('la2') || getRadio('la3') || getRadio('la4') ||
+    Object.keys(tfAnswers).length > 0 ||
+    g('lb_j1') || g('lb_j2') || g('lb_j3') || g('lb_j4') || g('lb_j5') ||
+    g('ra1') || g('ra2') || g('ra3') || g('ra4') || g('ra5') || g('ra6') ||
+    g('rb_q1') || g('rb_q2') || g('rb_q3') || g('rb_q4') ||
+    g('writingText').trim();
+  document.getElementById('savedBanner').style.display = hasAnswers ? 'flex' : 'none';
+}
+
 function clearSaved() {
   localStorage.removeItem(SAVE_KEY);
+  // Reset all fields
+  document.getElementById('studentName').value = '';
+  ['la1','la2','la3','la4'].forEach(n => {
+    document.querySelectorAll(`input[name="${n}"]`).forEach(r => r.checked = false);
+  });
+  for (let i=1; i<=5; i++) {
+    delete tfAnswers[i];
+    document.querySelector(`#tf-block-${i} .T-btn`).classList.remove('active');
+    document.querySelector(`#tf-block-${i} .F-btn`).classList.remove('active');
+    document.getElementById(`tf-corr-${i}`).style.display = 'none';
+    const inp = document.getElementById(`lb_j${i}`);
+    if (inp) inp.value = '';
+  }
+  ['ra1','ra2','ra3','ra4','ra5','ra6'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+  ['rb_q1','rb_q2','rb_q3','rb_q4'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+  document.getElementById('writingText').value = '';
+  ['rub1','rub2','rub3','rub4'].forEach(n => {
+    document.querySelectorAll(`input[name="${n}"]`).forEach(r => r.checked = false);
+  });
+  updateWordCount();
+  updateRubric();
   document.getElementById('savedBanner').style.display = 'none';
+  document.getElementById('results').style.display = 'none';
 }
 
 function flashToast() {
@@ -1654,19 +1683,19 @@ function checkUnanswered() {
   if (proceedAnyway) { proceedAnyway = false; calculateFinalGrade(); return; }
   const missing = [];
   ['la1','la2','la3','la4'].forEach((n,i) => {
-    if (!getRadio(n)) missing.push(`<li><a href="#mc-grid-la" onclick="scrollTo('mc-grid-la')">Listening A — Question ${i+1}</a></li>`);
+    if (!getRadio(n)) missing.push(`<li><a href="#mc-grid-la" onclick="scrollTo('mc-grid-la')">Listening A — Pregunta ${i+1}</a></li>`);
   });
   for (let i=1; i<=5; i++) {
-    if (!tfAnswers[i]) missing.push(`<li><a href="#tf-block-${i}" onclick="scrollToId('tf-block-${i}')">Listening B — Conversation ${i}</a></li>`);
+    if (!tfAnswers[i]) missing.push(`<li><a href="#tf-block-${i}" onclick="scrollToId('tf-block-${i}')">Listening B — Conversación ${i}</a></li>`);
   }
   ['ra1','ra2','ra3','ra4','ra5','ra6'].forEach((id,i) => {
-    if (!g(id)) missing.push(`<li><a href="#ra-row-${i+1}" onclick="scrollToId('ra-row-${i+1}')">Reading A — Question ${i+1}</a></li>`);
+    if (!g(id)) missing.push(`<li><a href="#ra-row-${i+1}" onclick="scrollToId('ra-row-${i+1}')">Reading A — Pregunta ${i+1}</a></li>`);
   });
-  if (!g('rb_q1')) missing.push('<li><a href="#rb_q1" onclick="scrollToId(\'rb_q1\')">Reading B — Question 1</a></li>');
-  if (!g('rb_q2')) missing.push('<li><a href="#rb_q2" onclick="scrollToId(\'rb_q2\')">Reading B — Question 2</a></li>');
-  if (!g('rb_q3')) missing.push('<li><a href="#rb_q3" onclick="scrollToId(\'rb_q3\')">Reading B — Question 3</a></li>');
-  if (!g('rb_q4')) missing.push('<li><a href="#rb_q4" onclick="scrollToId(\'rb_q4\')">Reading B — Question 4</a></li>');
-  if (!g('writingText').trim()) missing.push('<li><a href="#writingText" onclick="scrollToId(\'writingText\')">Writing — No text written</a></li>');
+  if (!g('rb_q1')) missing.push('<li><a href="#rb_q1" onclick="scrollToId(\'rb_q1\')">Reading B — Pregunta 1</a></li>');
+  if (!g('rb_q2')) missing.push('<li><a href="#rb_q2" onclick="scrollToId(\'rb_q2\')">Reading B — Pregunta 2</a></li>');
+  if (!g('rb_q3')) missing.push('<li><a href="#rb_q3" onclick="scrollToId(\'rb_q3\')">Reading B — Pregunta 3</a></li>');
+  if (!g('rb_q4')) missing.push('<li><a href="#rb_q4" onclick="scrollToId(\'rb_q4\')">Reading B — Pregunta 4</a></li>');
+  if (!g('writingText').trim()) missing.push('<li><a href="#writingText" onclick="scrollToId(\'writingText\')">Writing — Sin texto escrito</a></li>');
 
   if (missing.length > 0) {
     document.getElementById('unansweredList').innerHTML = missing.join('');
@@ -1809,16 +1838,16 @@ function togglePartialFeedback() {
 // ── FEEDBACK BUILDER ──
 function buildFeedback(autoLA, autoLBtf, autoRA) {
   const LA_labels = {
-    la1: 'How did Sofía feel about her vacation?',
+    la1: 'How was Sofía\'s vacation?',
     la2: 'Where did Sofía stay?',
-    la3: 'What did David forget?',
+    la3: 'What was the problem with David\'s bag?',
     la4: "What was the problem with David's vacation?"
   };
-  const LA_correct = { la1:'c) It was fantastic.', la2:'b) In a hostel.', la3:'a) His camera.', la4:'d) It rained a lot.' };
+  const LA_correct = { la1:'c) It was fantastic.', la2:'b) In a hostel.', la3:'b) It was very heavy.', la4:'d) It rained a lot.' };
   const LA_options = {
-    la1: {a:'It was okay.',b:'It was boring.',c:'It was fantastic.',d:'It was tiring.'},
+    la1: {a:'It was okay.',b:'It was boring.',c:'It was fantastic.',d:'It was relaxing.'},
     la2: {a:'In a hotel.',b:'In a hostel.',c:"At her brother's house.",d:'In a tent.'},
-    la3: {a:'His camera.',b:'His passport.',c:'His phone.',d:'His umbrella.'},
+    la3: {a:'It was too small.',b:'It was very heavy.',c:'He packed the wrong things.',d:'He left it at home.'},
     la4: {a:"He didn't see his family.",b:'The hotel was expensive.',c:'He lost his phone.',d:'It rained a lot.'}
   };
   const LB_labels = {
@@ -1829,11 +1858,11 @@ function buildFeedback(autoLA, autoLBtf, autoRA) {
     5:'Isabela played volleyball alone.'
   };
   const LB_explain = {
-    1:'True — Pedro confirmed he went to the party.',
-    2:'False — She watched it at her sister\'s house.',
-    3:'False — Her brother helped her.',
-    4:'False — It didn\'t rain. It was sunny all day.',
-    5:'False — She played with her friends.'
+    1:'Verdadero — Pedro confirmó que fue a la fiesta.',
+    2:'Falso — Ella lo vio en la casa de su hermana.',
+    3:'Falso — Su hermano la ayudó.',
+    4:'Falso — No llovió. Estuvo soleado todo el día.',
+    5:'Falso — Ella jugó con sus amigos.'
   };
   const RA_labels = {
     ra1:'Is there a washing machine in the apartment?',
@@ -1867,11 +1896,11 @@ function buildFeedback(autoLA, autoLBtf, autoRA) {
     html += `<div class="feedback-item" data-status="${isOk?'correct':'incorrect'}">
       <div class="fi-label">
         <span>${i+1}. ${LA_labels[n]}</span>
-        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correct':'❌ Incorrect'}</span>
+        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correcto':'❌ Incorrecto'}</span>
       </div>
-      <div class="student-ans">Your answer: ${studentText}</div>
-      ${!isOk ? `<div class="correct-ans">✅ Correct answer: ${LA_correct[n]}</div>` : ''}
-      <div class="explanation">${isOk ? 'Great job!' : 'Listen again carefully to identify the key information.'}</div>
+      <div class="student-ans">Tu respuesta: ${studentText}</div>
+      ${!isOk ? `<div class="correct-ans">✅ Respuesta correcta: ${LA_correct[n]}</div>` : ''}
+      <div class="explanation">${isOk ? '¡Muy bien!' : 'Escucha de nuevo con atención para identificar la información clave.'}</div>
     </div>`;
   });
   const laMsg = laCorrect === 4 ? ['high','🌟 ¡Perfecto en Listening A!'] : laCorrect >= 2 ? ['mid','💡 Buen esfuerzo. Escucha de nuevo las partes que te costaron.'] : ['low','💪 Practica más el listening. Intenta leer las preguntas antes de escuchar.'];
@@ -1889,10 +1918,10 @@ function buildFeedback(autoLA, autoLBtf, autoRA) {
     html += `<div class="feedback-item" data-status="${isOk?'correct':'incorrect'}">
       <div class="fi-label">
         <span>Conv. ${i}: ${LB_labels[i]}</span>
-        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correct':'❌ Incorrect'}</span>
+        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correcto':'❌ Incorrecto'}</span>
       </div>
-      <div class="student-ans">Your answer: ${student}</div>
-      ${!isOk ? `<div class="correct-ans">✅ Correct: ${correct}</div>` : ''}
+      <div class="student-ans">Tu respuesta: ${student}</div>
+      ${!isOk ? `<div class="correct-ans">✅ Correcto: ${correct}</div>` : ''}
       <div class="explanation">${LB_explain[i]}</div>
     </div>`;
   }
@@ -1922,10 +1951,10 @@ function buildFeedback(autoLA, autoLBtf, autoRA) {
     html += `<div class="feedback-item" data-status="${isOk?'correct':'incorrect'}">
       <div class="fi-label">
         <span>${i+1}. ${RA_labels[id]}</span>
-        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correct':'❌ Incorrect'}</span>
+        <span class="tag ${isOk?'correct-tag':'incorrect-tag'}">${isOk?'✅ Correcto':'❌ Incorrecto'}</span>
       </div>
-      <div class="student-ans">Your answer: ${student}</div>
-      ${!isOk ? `<div class="correct-ans">✅ Correct: ${RA_correct_text[id]}</div>` : ''}
+      <div class="student-ans">Tu respuesta: ${student}</div>
+      ${!isOk ? `<div class="correct-ans">✅ Correcto: ${RA_correct_text[id]}</div>` : ''}
     </div>`;
   });
   const raMsg = raCorrect === 6 ? ['high','🌟 ¡Perfecto en Reading A!'] : raCorrect >= 4 ? ['mid','💡 Buen trabajo. Revisa las respuestas con there is / there are.'] : ['low','💪 Practica la estructura there is / there isn\'t / there are / there aren\'t.'];
